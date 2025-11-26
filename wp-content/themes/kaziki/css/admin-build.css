@@ -1,0 +1,121 @@
+/**
+ * Admin Build System Styles
+ * 
+ * @package kaziki
+ */
+
+/* Build Actions Meta Box */
+.build-actions {
+    padding: 0;
+}
+
+.build-actions p {
+    margin: 0 0 10px 0;
+}
+
+.build-actions .button {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.build-actions .button .dashicons {
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.build-actions hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Build Progress */
+#build-progress {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+#build-progress p {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+}
+
+#build-progress-bar {
+    background: #0073aa;
+    height: 20px;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Build Info Meta Box */
+.build-info p {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+}
+
+.build-info strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #23282d;
+}
+
+.build-info code {
+    display: block;
+    padding: 5px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 11px;
+    word-break: break-all;
+    color: #d63638;
+}
+
+/* Status Badge */
+.build-status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.build-status-badge.draft {
+    background: #999;
+}
+
+.build-status-badge.building {
+    background: #0073aa;
+}
+
+.build-status-badge.ready {
+    background: #46b450;
+}
+
+.build-status-badge.deployed {
+    background: #00a32a;
+}
+
+.build-status-badge.error {
+    background: #dc3232;
+}
+
+/* ACF Field Groups */
+.acf-field-group {
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .build-actions .button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

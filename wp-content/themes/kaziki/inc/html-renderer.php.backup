@@ -1,0 +1,957 @@
+<?php
+/**
+ * HTML Renderer - Convert PHP Template to Static HTML
+ * 
+ * @package kaziki
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class Kaziki_HTML_Renderer {
+    
+    private $build_id;
+    private $build_dir;
+    private $images = array();
+    
+    public function __construct($build_id) {
+        $this->build_id = $build_id;
+        $this->build_dir = Kaziki_Build_System::get_build_dir($build_id);
+    }
+    
+    /**
+     * Generate HTML build
+     */
+    public function generate() {
+        try {
+            // Create build directory
+            Kaziki_Build_System::create_build_dir($this->build_id);
+            
+            // Update status
+            Kaziki_Build_System::update_build_status($this->build_id, 'building');
+            
+            // Render HTML
+            $html = $this->render_template();
+            
+            // Download and replace images
+            $html = $this->process_images($html);
+            
+            // Save HTML file
+            $html_file = $this->build_dir . '/index.html';
+            file_put_contents($html_file, $html);
+            
+            // Update meta
+            update_post_meta($this->build_id, '_build_path', $this->build_dir);
+            Kaziki_Build_System::update_build_status($this->build_id, 'ready');
+            
+            return array(
+                'success' => true,
+                'message' => 'Build generated successfully',
+                'path' => $this->build_dir,
+                'url' => Kaziki_Build_System::get_build_url($this->build_id) . '/index.html'
+            );
+            
+        } catch (Exception $e) {
+            Kaziki_Build_System::update_build_status($this->build_id, 'error');
+            return array(
+                'success' => false,
+                'message' => $e->getMessage()
+            );
+        }
+    }
+    
+    /**
+     * Render template to HTML
+     */
+    private function render_template() {
+        // Get ACF fields from build post
+        $fields = $this->get_build_fields();
+        
+        // Get option fields (shared across all builds)
+        $option_fields = $this->get_option_fields();
+        
+        // Start output buffering
+        ob_start();
+        
+        // Extract variables for template
+        extract($fields);
+        extract($option_fields);
+        
+        // Include template with custom get_field function
+        $this->render_with_custom_fields($fields, $option_fields);
+        
+        // Get content
+        $html = ob_get_clean();
+        
+        return $html;
+    }
+    
+    /**
+     * Render template with custom field values
+     */
+    private function render_with_custom_fields($fields, $option_fields) {
+        // Set up global post for template
+        global $post;
+        $original_post = $post;
+        $post = get_post($this->build_id);
+        
+        // Get selected template (default to template1)
+        $template = $fields['build_template'] ?? 'template1';
+        
+        // Render the selected template
+        $this->render_html_structure($fields, $option_fields, $template);
+        
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><?php echo esc_html($title_page); ?></title>
+
+    <meta name="title" content="<?php echo esc_attr($title_page); ?>">
+    <meta name="description" content="<?php echo esc_attr($description_page); ?>">
+
+    <meta property="og:title" content="<?php echo esc_attr($title_page); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($description_page); ?>">
+    <meta property="og:url" content="<?php echo esc_url($current_url); ?>">
+    <?php if ($og_image): ?>
+        <meta property="og:image" content="<?php echo esc_url($og_image); ?>">
+        <meta property="og:image:secure_url" content="<?php echo esc_url($og_image); ?>">
+    <?php endif; ?>
+
+    <meta name="twitter:title" content="<?php echo esc_attr($title_page); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr($description_page); ?>">
+    <?php if ($og_image): ?>
+        <meta name="twitter:image" content="<?php echo esc_url($og_image); ?>">
+    <?php endif; ?>
+
+    <?php if ($favicon): ?>
+        <link type="image/png" href="<?php echo esc_url($favicon); ?>" rel="icon" sizes="16x16">
+        <link type="image/png" href="<?php echo esc_url($favicon); ?>" rel="icon" sizes="32x32">
+        <link type="image/x-icon" href="<?php echo esc_url($favicon); ?>" rel="icon">
+    <?php endif; ?>
+
+    <link href="<?php echo esc_url($current_url); ?>" rel="canonical">
+
+    <meta name="robots" content="ALL">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="preload" as="font">
+
+    <style>
+        :root {
+            --color-bg: <?php echo $bg; ?>;
+            --color-text: <?php echo $color_text; ?>;
+            --color-faq: #fff;
+            --color-bg-faq: #13212d;
+            --color-link: <?php echo $color_link; ?>;
+            --color-link-hover: #ecbe15;
+            --border-color: <?php echo $border_color; ?>;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            height: auto;
+            line-height: 1;
+            margin: 0;
+            outline: 0;
+            text-align: left;
+            top: 0 !important;
+            position: relative;
+            scroll-behavior: smooth;
+            text-rendering: optimizeSpeed;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: .03em;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+            line-height: 36px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        h5 {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        p {
+            line-height: 150%;
+            font-weight: 500;
+        }
+
+        a {
+            color: <?php echo $color_link; ?>;
+        }
+
+        a:active, a:focus, a:hover {
+            outline: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 1rem auto;
+            padding-bottom: 1rem;
+            text-align: center;
+            display: table;
+            white-space: nowrap;
+            padding: 11px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 18px;
+            width: 100%;
+        }
+
+        table td {
+            padding: 11px 15px;
+            border: 2px solid var(--border-color);
+            border-style: none solid solid none;
+            background: <?php echo $color_second; ?>;
+            white-space: normal;
+        }
+
+        table tr:nth-child(odd) td {
+            background: <?php echo $table_odd; ?>;
+        }
+
+        table tr:nth-child(even) td {
+            background: <?php echo $table_even; ?>;
+        }
+
+        header {
+            display: none;
+        }
+
+        aside nav {
+            position: fixed;
+            padding: 30px;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: start;
+            max-width: 240px;
+            width: 100%;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .logo {
+            margin: 15px 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .button {
+            color: <?php echo $btn_text; ?> !important;
+            background: <?php echo $btn_bg; ?>;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            transition: .6s;
+            font-weight: bold;
+            width: -webkit-fill-available;
+        }
+
+        .btn {
+            color: <?php echo $btn2_text; ?>;
+            background: <?php echo $btn2_bg; ?>;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: -webkit-fill-available;
+            transition: .6s;
+            font-weight: bold;
+        }
+
+        .button:hover, .btn:hover {
+            transition: .6s;
+            transform: scale(1.05);
+        }
+
+        aside nav .button {
+            width: -webkit-fill-available;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .container ul {
+            list-style: inherit;
+            padding-left: 40px;
+        }
+
+        ul li a {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            background: <?php echo $color_link; ?>;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+
+        .main_content {
+            padding: 20px 0px 0px 300px;
+        }
+
+        .main_content .btn, .main_content .button {
+            width: 320px;
+            margin: 1em auto;
+        }
+
+        .main_content-container {
+            padding: 0 24px;
+        }
+
+        .main_content img {
+            width: 100%;
+            border-radius: 18px;
+        }
+
+        .main_content p img {
+            margin: auto;
+            width: 100%;
+            max-height: 500px;
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .btn-list {
+            display: flex;
+            gap: 20px;
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .btn-list a {
+            border: 2px solid <?php echo $color_main; ?>;
+            color: <?php echo $color_main; ?>;
+            font-weight: bold;
+            border-radius: 40px;
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: .5s;
+            text-transform: uppercase;
+        }
+
+        .btn-list a:hover {
+            text-decoration: none;
+            transition: .5s;
+            filter: hue-rotate(45deg);
+        }
+
+        .btn-list .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .slot-list {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .slot-list-item {
+            width: 15%;
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .slot-list-buttons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: #080808ad;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transition: .6s;
+        }
+
+        .slot-list-buttons .btn, .slot-list-buttons .button {
+            width: fit-content;
+        }
+
+        .slot-list-item:hover .slot-list-buttons {
+            opacity: 1;
+            transition: .6s;
+        }
+
+        .slot-list span {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            right: 0;
+            padding: 3px;
+            color: <?php echo $btn2_text; ?>;
+            background: <?php echo $btn2_bg; ?>;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .faq {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .faq-items {
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            background: <?php echo $color_second; ?>;
+            padding: 15px 20px;
+            margin: 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: <?php echo $color_second; ?>;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .faq-items.active .faq-question::after {
+            content: '−';
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            padding: 0 20px;
+            margin: 0;
+            overflow: hidden;
+            background: <?php echo $color_second; ?>;
+            transition: all 0.4s ease;
+            opacity: 0;
+            line-height: 1.6;
+        }
+
+        .faq-items.active .faq-answer {
+            max-height: 500px;
+            padding: 15px 20px;
+            opacity: 1;
+        }
+
+        .faq-items.active {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payments {
+            background: <?php echo $color_second; ?>;
+        }
+
+        .payments, .parthners {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            gap: 20px 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0;
+            border-bottom: 1px solid #C4C9DA;
+        }
+
+        .payments img, .parthners img {
+            max-height: 60px;
+        }
+
+        .menu-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 40px 0;
+            margin: 0;
+            background: <?php echo $color_second; ?>;
+        }
+
+        .menu-footer a {
+            text-decoration: underline;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .all-right {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            border-top: 1px solid #C4C9DA;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-items');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', function() {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <?php if ($logo): ?>
+                <img src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr($alt); ?>">
+            <?php endif; ?>
+        </div>
+    </header>
+    
+    <aside>
+        <nav>
+            <a class="logo" href="<?php echo esc_url($link); ?>">
+                <?php if ($logo): ?>
+                    <img src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr($alt); ?>">
+                <?php endif; ?>
+            </a>
+
+            <div class="buttons">
+                <?php if (!empty($buttons) && is_array($buttons)): ?>
+                    <?php foreach ($buttons as $index => $button): ?>
+                        <?php $class = ($index == 1) ? 'btn' : 'button'; ?>
+                        <a class="<?php echo esc_attr($class); ?>" href="<?php echo esc_url($link); ?>">
+                            <?php echo esc_html($button['name'] ?? ''); ?>
+                        </a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+            
+            <ul class="menu">
+                <?php if (!empty($menu) && is_array($menu)): ?>
+                    <?php foreach ($menu as $menu_item): ?>
+                        <li>
+                            <a href="<?php echo esc_url($link); ?>">
+                                <?php if (!empty($menu_item['icon'])): ?>
+                                    <span class="icon" style="mask-image: url('<?php echo esc_url($menu_item['icon']); ?>');"></span>
+                                <?php endif; ?>
+                                <span><?php echo esc_html($menu_item['name'] ?? ''); ?></span>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </aside>
+    
+    <main>
+        <div class="main_content">
+            <div class="main_content-container">
+                <div class="hero">
+                    <?php if ($hero): ?>
+                        <img src="<?php echo esc_url($hero); ?>" alt="<?php echo esc_attr($alt); ?>">
+                    <?php endif; ?>
+                </div>
+                
+                <ul class="btn-list">
+                    <?php if (!empty($category_list) && is_array($category_list)): ?>
+                        <?php foreach ($category_list as $category): ?>
+                            <li>
+                                <a href="<?php echo esc_url($link); ?>">
+                                    <?php if (!empty($category['image'])): ?>
+                                        <span class="icon" style="mask-image: url('<?php echo esc_url($category['image']); ?>');"></span>
+                                    <?php endif; ?>
+                                    <?php if (!empty($category['name'])): ?>
+                                        <span><?php echo esc_html($category['name']); ?></span>
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+                
+                <div class="slot-list">
+                    <?php if (!empty($casino_list) && is_array($casino_list)): ?>
+                        <?php foreach ($casino_list as $casino): ?>
+                            <div class="slot-list-item">
+                                <?php if (!empty($casino['image'])): ?>
+                                    <img src="<?php echo esc_url($casino['image']); ?>" alt="<?php echo esc_attr($casino['name'] ?? $alt); ?>">
+                                    <span><?php echo esc_html($casino['name'] ?? ''); ?></span>
+                                <?php endif; ?>
+                                <div class="slot-list-buttons">
+                                    <a class="button" href="<?php echo esc_url($link); ?>">Play</a>
+                                    <a class="btn" href="<?php echo esc_url($link); ?>">Demo</a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="container">
+                    <?php echo $content_text; ?>
+                </div>
+
+                <div class="faq">
+                    <?php if (!empty($faq_items) && is_array($faq_items)): ?>
+                        <?php foreach ($faq_items as $faq): ?>
+                            <div class="faq-items">
+                                <p class="faq-question"><?php echo esc_html($faq['question'] ?? ''); ?></p>
+                                <p class="faq-answer"><?php echo esc_html($faq['answer'] ?? ''); ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+                
+                <?php if (!empty($faq_items) && is_array($faq_items)): ?>
+                    <?php
+                    $faq_schema = array(
+                        "@context" => "https://schema.org",
+                        "@type" => "FAQPage",
+                        "mainEntity" => array()
+                    );
+                    
+                    foreach ($faq_items as $faq) {
+                        if (!empty($faq['question']) && !empty($faq['answer'])) {
+                            $faq_schema["mainEntity"][] = array(
+                                "@type" => "Question",
+                                "name" => strip_tags($faq['question']),
+                                "acceptedAnswer" => array(
+                                    "@type" => "Answer",
+                                    "text" => strip_tags($faq['answer'])
+                                )
+                            );
+                        }
+                    }
+                    ?>
+                    <script type="application/ld+json">
+                        <?php echo json_encode($faq_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+                    </script>
+                <?php endif; ?>
+
+            </div>
+            
+            <footer>
+                <ul class="payments">
+                    <?php if (!empty($payments) && is_array($payments)): ?>
+                        <?php foreach ($payments as $payment): ?>
+                            <li>
+                                <a href="<?php echo esc_url($link); ?>">
+                                    <?php if (!empty($payment['image'])): ?>
+                                        <img src="<?php echo esc_url($payment['image']); ?>" alt="<?php echo esc_attr($alt); ?>">
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+                
+                <ul class="parthners">
+                    <?php if (!empty($parthners) && is_array($parthners)): ?>
+                        <?php foreach ($parthners as $partner): ?>
+                            <li>
+                                <a href="<?php echo esc_url($link); ?>">
+                                    <?php if (!empty($partner['image'])): ?>
+                                        <img src="<?php echo esc_url($partner['image']); ?>" alt="<?php echo esc_attr($alt); ?>">
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+                
+                <ul class="menu-footer">
+                    <?php if (!empty($menu_footer) && is_array($menu_footer)): ?>
+                        <?php foreach ($menu_footer as $footer_item): ?>
+                            <li>
+                                <a href="<?php echo esc_url($link); ?>">
+                                    <?php echo esc_html($footer_item['name'] ?? ''); ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+                
+                <p class="all-right">
+                    <?php echo $all_right; ?>
+                </p>
+            </footer>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
+        <?php
+    }
+    
+    /**
+     * Get build fields
+     */
+    private function get_build_fields() {
+        $fields = array(
+            'build_template' => get_field('build_template', $this->build_id) ?: 'template1',
+            'title_page' => get_field('title_page', $this->build_id),
+            'description_page' => get_field('description_page', $this->build_id),
+            'canonical' => get_field('canonical', $this->build_id),
+            'hero' => get_field('hero', $this->build_id),
+            'category_list' => get_field('category_list', $this->build_id),
+            'casino_list' => get_field('casino_list', $this->build_id),
+            'content_text' => get_field('content_text', $this->build_id),
+            'faq_items' => get_field('faq_items', $this->build_id),
+        );
+        
+        return $fields;
+    }
+    
+    /**
+     * Get option fields (from theme settings)
+     * 
+     * NOTE: These fields are loaded fresh from the database on each build generation,
+     * so any changes to option page fields will be reflected in new builds automatically.
+     */
+    private function get_option_fields() {
+        $fields = array(
+            'ref_link' => get_field('ref_link', 'option'),
+            'main_color' => get_field('main_color', 'option'),
+            'second_color' => get_field('second_color', 'option'),
+            'text_color' => get_field('text_color', 'option'),
+            'bg_color' => get_field('bg_color', 'option'),
+            'link_color' => get_field('link_color', 'option'),
+            'alt_text' => get_field('alt_text', 'option'),
+            'btn_color' => get_field('btn_color', 'option'),
+            'btn_color_text' => get_field('btn_color_text', 'option'),
+            'btn2_color' => get_field('btn2_color', 'option'),
+            'btn2_color_text' => get_field('btn2_color_text', 'option'),
+            'table_odd' => get_field('table_odd', 'option'),
+            'table_even' => get_field('table_even', 'option'),
+            'logo' => get_field('logo', 'option'),
+            'og_image' => get_field('og_image', 'option'),
+            'favicon' => get_field('favicon', 'option'),
+            'buttons' => get_field('buttons', 'option'),
+            'menu' => get_field('menu', 'option'),
+            'payments' => get_field('payments', 'option'),
+            'parthners' => get_field('parthners', 'option'),
+            'menu_footer' => get_field('menu_footer', 'option'),
+            'all_right' => get_field('all_right', 'option'),
+            'border-colors' => get_field('border-colors', 'option'),
+        );
+        
+        return $fields;
+    }
+    
+    /**
+     * Process images - download and replace URLs
+     */
+    private function process_images($html) {
+        // Find all image URLs
+        preg_match_all('/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i', $html, $matches);
+        
+        if (!empty($matches[1])) {
+            foreach ($matches[1] as $image_url) {
+                $local_path = $this->download_image($image_url);
+                if ($local_path) {
+                    $html = str_replace($image_url, $local_path, $html);
+                }
+            }
+        }
+        
+        // Find background images in style attributes
+        preg_match_all('/url\(["\']?([^"\'()]+)["\']?\)/i', $html, $bg_matches);
+        
+        if (!empty($bg_matches[1])) {
+            foreach ($bg_matches[1] as $image_url) {
+                if (filter_var($image_url, FILTER_VALIDATE_URL)) {
+                    $local_path = $this->download_image($image_url);
+                    if ($local_path) {
+                        $html = str_replace($image_url, $local_path, $html);
+                    }
+                }
+            }
+        }
+        
+        return $html;
+    }
+    
+    /**
+     * Download image and save locally
+     */
+    private function download_image($url) {
+        // Skip if already downloaded
+        if (isset($this->images[$url])) {
+            return $this->images[$url];
+        }
+        
+        // Skip data URLs
+        if (strpos($url, 'data:') === 0) {
+            return $url;
+        }
+        
+        // Get file extension
+        $path_info = pathinfo(parse_url($url, PHP_URL_PATH));
+        $extension = isset($path_info['extension']) ? $path_info['extension'] : 'jpg';
+        $filename_from_url = basename(parse_url($url, PHP_URL_PATH));
+        
+        // Generate unique filename
+        $filename = md5($url) . '.' . $extension;
+        $local_path = $this->build_dir . '/img/' . $filename;
+        $relative_path = 'img/' . $filename;
+        
+        // Try to copy from local img directory first (for local development)
+        $local_img_path = ABSPATH . 'img/' . $filename_from_url;
+        
+        if (file_exists($local_img_path)) {
+            // Copy from local directory
+            if (copy($local_img_path, $local_path)) {
+                $this->images[$url] = $relative_path;
+                error_log('Copied image from local: ' . $filename_from_url);
+                return $relative_path;
+            }
+        }
+        
+        // Try to download from URL (for remote images)
+        try {
+            // Disable SSL verification for local development
+            $context = stream_context_create(array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                )
+            ));
+            
+            $image_data = file_get_contents($url, false, $context);
+            if ($image_data !== false) {
+                file_put_contents($local_path, $image_data);
+                $this->images[$url] = $relative_path;
+                error_log('Downloaded image from URL: ' . $url);
+                return $relative_path;
+            }
+        } catch (Exception $e) {
+            error_log('Failed to download image: ' . $url . ' - ' . $e->getMessage());
+            // If download fails, keep original URL
+            return $url;
+        }
+        
+        return $url;
+    }
+    
+    /**
+     * Create ZIP archive
+     */
+    public function create_zip() {
+        $zip_file = $this->build_dir . '.zip';
+        
+        if (file_exists($zip_file)) {
+            unlink($zip_file);
+        }
+        
+        $zip = new ZipArchive();
+        if ($zip->open($zip_file, ZipArchive::CREATE) !== true) {
+            return false;
+        }
+        
+        // Add files to zip
+        $files = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($this->build_dir),
+            RecursiveIteratorIterator::LEAVES_ONLY
+        );
+        
+        foreach ($files as $file) {
+            if (!$file->isDir()) {
+                $file_path = $file->getRealPath();
+                $relative_path = substr($file_path, strlen($this->build_dir) + 1);
+                $zip->addFile($file_path, $relative_path);
+            }
+        }
+        
+        $zip->close();
+        
+        return $zip_file;
+    }
+}

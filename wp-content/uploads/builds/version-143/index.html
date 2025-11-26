@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Build 4</title>
+
+    <meta name="title" content="Build 4">
+    <meta name="description" content="fjgfdjfasj">
+
+    <meta property="og:title" content="Build 4">
+    <meta property="og:description" content="fjgfdjfasj">
+    <meta property="og:url" content="#">
+            <meta property="og:image" content="https://kaziki.uas/img/r8peK7GVONncwG30TB.webp">
+        <meta property="og:image:secure_url" content="https://kaziki.uas/img/r8peK7GVONncwG30TB.webp">
+    
+    <meta name="twitter:title" content="Build 4">
+    <meta name="twitter:description" content="fjgfdjfasj">
+            <meta name="twitter:image" content="https://kaziki.uas/img/r8peK7GVONncwG30TB.webp">
+    
+            <link type="image/png" href="img/390322909929f0c429259df479f1050c.webp" rel="icon" sizes="16x16">
+        <link type="image/png" href="img/390322909929f0c429259df479f1050c.webp" rel="icon" sizes="32x32">
+        <link type="image/x-icon" href="img/390322909929f0c429259df479f1050c.webp" rel="icon">
+    
+    <link href="#" rel="canonical">
+
+    <meta name="robots" content="ALL">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --s-8a0f92: #375e30;
+            --s-bc44ef: #f4d78a;
+            --kz-faq: #fff;
+            --s-8a0f92-faq: #13212d;
+            --x-a2c503: #f4d78a;
+            --x-a2c503-hover: #ecbe15;
+            --p-2bf593: #7cae8d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--s-8a0f92);
+            color: var(--s-bc44ef);
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            height: auto;
+            line-height: 1;
+            margin: 0;
+            outline: 0;
+            text-align: left;
+            top: 0 !important;
+            position: relative;
+            scroll-behavior: smooth;
+            text-rendering: optimizeSpeed;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: .03em;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+            line-height: 36px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        h5 {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        p {
+            line-height: 150%;
+            font-weight: 500;
+        }
+        li{
+            margin-bottom:.9em;
+        }
+        a {
+            color: #f4d78a;
+        }
+
+        a:active, a:focus, a:hover {
+            outline: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 1rem auto;
+            padding-bottom: 1rem;
+            text-align: center;
+            display: table;
+            white-space: nowrap;
+            padding: 11px 15px;
+            border: 2px solid var(--p-2bf593);
+            border-radius: 18px;
+            width: 100%;
+        }
+
+        table td {
+            padding: 11px 15px;
+            border: 2px solid var(--p-2bf593);
+            border-style: none solid solid none;
+            background: #2c4b43;
+            white-space: normal;
+        }
+
+        table tr:nth-child(odd) td {
+            background: #3b5f54;
+        }
+
+        table tr:nth-child(even) td {
+            background: #455e46;
+        }
+
+        .h-68e244 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--s-8a0f92);
+            border-bottom: 1px solid var(--p-2bf593);
+            padding: 15px 20px;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .p-3e315f {
+            width: 30px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .p-3e315f span {
+            width: 100%;
+            height: 3px;
+            background: var(--s-bc44ef);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .p-3e315f.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .p-3e315f.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .p-3e315f.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        .c-6a3208 {
+            max-height: 40px;
+        }
+
+        header.v-de68a6 {
+            display: none!important;
+        }
+
+        .n-9faa32 {
+            position: fixed;
+            padding: 30px;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: start;
+            max-width: 300px;
+            width: 100%;
+            border-right: 1px solid var(--p-2bf593);
+            background: var(--s-8a0f92);
+            z-index: 999;
+            overflow-y: auto;
+        }
+
+        .c-73e53b {
+            margin: 15px 0;
+        }
+
+        .c-73e53b img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .z-b6c973 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .c-304951 {
+            color: #1f3a34 !important;
+            background: #f4d78a;
+            border: 1px solid var(--p-2bf593);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            transition: .6s;
+            font-weight: bold;
+            width: -webkit-fill-available;
+        }
+
+        .c-0f4ad5 {
+            color: #f4d78a;
+            background: #0da000;
+            border: 1px solid var(--p-2bf593);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: -webkit-fill-available;
+            transition: .6s;
+            font-weight: bold;
+        }
+
+        .c-304951:hover, .c-0f4ad5:hover {
+            transition: .6s;
+            transform: scale(1.05);
+        }
+
+        .button {
+            color: #1f3a34 !important;
+            background: #f4d78a;
+            border: 1px solid var(--p-2bf593);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            transition: .6s;
+            font-weight: bold;
+                width: fit-content;
+    min-width: 320px;
+    margin:auto;
+        }
+
+        .btn {
+            color: #f4d78a;
+            background: #0da000;
+            border: 1px solid var(--p-2bf593);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+                width: fit-content;
+    min-width: 320px;
+            transition: .6s;
+            font-weight: bold;
+             margin:auto;
+        }
+
+        .button:hover, .btn:hover {
+            transition: .6s;
+            transform: scale(1.05);
+        }
+
+        .d-815c80 {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .s-b7384a .d-815c80 {
+            list-style: inherit;
+            padding-left: 40px;
+        }
+
+        .d-815c80 li a {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            text-decoration: none;
+            justify-content: center;
+        }
+
+        .d-815c80 li a:hover {
+            text-decoration: underline;
+        }
+
+        .y-29c7d7 {
+            width: 24px;
+            height: 24px;
+            background: #f4d78a;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            display: inline-block;
+        }
+
+        .d-251690 {
+            padding: 20px 0px 0px 300px;
+        }
+
+       
+
+        .c-837539 {
+            padding: 0 24px;
+        }
+
+        .c-837539 img {
+            width: 100%;
+            border-radius: 18px;
+        }
+
+        .c-837539 p img {
+            margin: auto;
+            width: 100%;
+            max-height: 500px;
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .p-087731 {
+            display: flex;
+            gap: 20px;
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 10px 0;
+            list-style: none;
+        }
+
+        .p-087731 a {
+            border: 2px solid #f4d78a;
+            color: #f4d78a;
+            font-weight: bold;
+            border-radius: 40px;
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: .5s;
+            text-transform: uppercase;
+            white-space: nowrap;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .p-087731 a:hover {
+            text-decoration: none;
+            transition: .5s;
+            filter: hue-rotate(45deg);
+        }
+
+        .p-087731 .y-29c7d7 {
+            width: 20px;
+            height: 20px;
+        }
+
+        .m-252123 {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .x-afe97e {
+            width: 15%;
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .g-a37fea {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: #080808ad;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transition: .6s;
+        }
+
+        .g-a37fea .c-0f4ad5, .g-a37fea .c-304951 {
+            width: fit-content;
+        }
+
+        .x-afe97e:hover .g-a37fea {
+            opacity: 1;
+            transition: .6s;
+        }
+
+        .x-afe97e .q-aef0b9 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            right: 0;
+            padding: 3px;
+            color: #f4d78a;
+            background: #0da000;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .w-e36130 {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .w-7bd8de {
+            border: 1px solid var(--p-2bf593);
+            border-radius: 18px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .d-676858 {
+            background: #2c4b43;
+            padding: 15px 20px;
+            margin: 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .d-676858:hover {
+            background: #2c4b43;
+        }
+
+        .d-676858::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .w-7bd8de.active .d-676858::after {
+            content: '−';
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        .h-1a55e9 {
+            max-height: 0;
+            padding: 0 20px;
+            margin: 0;
+            overflow: hidden;
+            background: #2c4b43;
+            transition: all 0.4s ease;
+            opacity: 0;
+            line-height: 1.6;
+        }
+
+        .w-7bd8de.active .h-1a55e9 {
+            max-height: 500px;
+            padding: 15px 20px;
+            opacity: 1;
+        }
+
+        .w-7bd8de.active {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .n-478e03 {
+            background: #2c4b43;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            gap: 20px 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            list-style:none;
+            margin: 0;
+            border-bottom: 1px solid #C4C9DA;
+        }
+
+        .n-478e03 img, .g-09b108 img {
+            max-height: 60px;
+        }
+
+        .g-09b108 {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+             list-style:none;
+            gap: 20px 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0;
+            border-bottom: 1px solid #C4C9DA;
+        }
+
+        .c-a32ee7 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 40px 20px;
+            margin: 0;
+            background: #2c4b43;
+            list-style: none;
+            text-align:center;
+        }
+
+        .c-a32ee7 a {
+            text-decoration: underline;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .m-5232f1 {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            border-top: 1px solid #C4C9DA;
+        }
+
+
+        .h-68e244-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .h-68e244-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+ 
+        @media (max-width: 991px) {
+            .h-68e244 {
+                display: flex;
+            }
+
+            .n-9faa32 {
+                left: -100%;
+                transition: left 0.3s ease;
+                top: 0;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+
+            .n-9faa32.active {
+                left: 0;
+            }
+
+            .d-251690 {
+                padding: 80px 0 0 0;
+            }
+
+            .x-afe97e {
+                width: 48%;
+            }
+
+            .c-a32ee7 {
+                grid-template-columns: 1fr;
+            }
+                    .c-837539 p img {
+            margin: auto;
+            max-height: 500px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+        }
+          .m-252123 {
+            display: grid;
+            gap: 12px;
+           grid-template-columns:1fr 1fr;
+        }
+        }
+
+        @media (min-width: 992px) {
+            .v-de68a6 {
+                display: block!important;
+            }
+          
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.w-7bd8de');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.d-676858');
+
+                question.addEventListener('click', function() {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+
+            const hamburger = document.querySelector('.p-3e315f');
+            const sidebar = document.querySelector('.n-9faa32');
+            const overlay = document.querySelector('.h-68e244-overlay');
+
+            if (hamburger && sidebar && overlay) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    sidebar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                });
+
+                overlay.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!sidebar.contains(event.target) && !hamburger.contains(event.target) && sidebar.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        sidebar.classList.remove('active');
+                        overlay.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="h-68e244-overlay"></div>
+    
+    <header class="h-68e244">
+        
+                    <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2" class="c-6a3208">
+                <div class="p-3e315f">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <header class="v-de68a6">
+        <div class="c-73e53b">
+                            <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2">
+                    </div>
+    </header>
+    
+    <aside class="n-9faa32">
+        <a class="c-73e53b" href="https://lemoncasino-hu.com/">
+                            <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2">
+                    </a>
+
+        <div class="z-b6c973">
+                                                                    <a class="c-304951" href="https://lemoncasino-hu.com/">
+                        Bejelentkezés                    </a>
+                                                        <a class="c-0f4ad5" href="https://lemoncasino-hu.com/">
+                        Regisztráció                    </a>
+                                    </div>
+        
+        <ul class="d-815c80">
+                                                <li>
+                        <a href="https://lemoncasino-hu.com/">
+                                                            <span class="y-29c7d7" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
+                                                        <span>Bonuszok</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="https://lemoncasino-hu.com/">
+                                                            <span class="y-29c7d7" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
+                                                        <span>Bonuszok</span>
+                        </a>
+                    </li>
+                                    </ul>
+    </aside>
+    
+    <main>
+        <div class="d-251690">
+            <div class="c-837539">
+                <div class="z-6dce11">
+                                            <img src="img/5ad3a72150693c4c1d1564364804e5bf.webp" alt="ALT TEXT2">
+                                    </div>
+                
+                <ul class="p-087731">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <span class="y-29c7d7" style="mask-image: url('img/7e4767e60314d035a1aa56052d90752a.svg');"></span>
+                                                                                                                <span>Poker1</span>
+                                                                    </a>
+                            </li>
+                                                            </ul>
+                
+                <div class="m-252123">
+                                                                        <div class="x-afe97e">
+                                                                    <img src="img/b26b66e47b1c9dbb9e2335e2b245584f.webp" alt="aafasf">
+                                    <span class="q-aef0b9">aafasf</span>
+                                                                <div class="g-a37fea">
+                                    <a class="c-304951" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-0f4ad5" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="x-afe97e">
+                                                                    <img src="img/950eba47ea7dec37f37cbbbeacd548ab.webp" alt="fasfas">
+                                    <span class="q-aef0b9">fasfas</span>
+                                                                <div class="g-a37fea">
+                                    <a class="c-304951" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-0f4ad5" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="x-afe97e">
+                                                                    <img src="img/390322909929f0c429259df479f1050c.webp" alt="fasf">
+                                    <span class="q-aef0b9">fasf</span>
+                                                                <div class="g-a37fea">
+                                    <a class="c-304951" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-0f4ad5" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="x-afe97e">
+                                                                    <img src="img/60d836f89c75cb58b9fa609dee463e6d.webp" alt="fas">
+                                    <span class="q-aef0b9">fas</span>
+                                                                <div class="g-a37fea">
+                                    <a class="c-304951" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-0f4ad5" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                            </div>
+                
+                <div class="s-b7384a">
+                    <p>burky-cz444444444444</p>
+                </div>
+
+                <div class="w-e36130">
+                                                                        <div class="w-7bd8de">
+                                <p class="d-676858">burky-cz</p>
+                                <p class="h-1a55e9">burky-czburky-czburky-cz</p>
+                            </div>
+                                                    <div class="w-7bd8de">
+                                <p class="d-676858">burky-cz</p>
+                                <p class="h-1a55e9">burky-czburky-czburky-cz</p>
+                            </div>
+                                                            </div>
+                
+                                                        <script type="application/ld+json">
+                        {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "burky-cz",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "burky-czburky-czburky-cz"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "burky-cz",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "burky-czburky-czburky-cz"
+            }
+        }
+    ]
+}                    </script>
+                
+            </div>
+            
+            <footer>
+                <ul class="n-478e03">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/b26266c79b62438302f0ae30a3bd6f5b.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/d3e26db2bb4376cc453ef24e56bdfb88.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/c44f80741e159bdb8cb84161f1198263.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/972ec3a04c17d38f436fccdecf2a097a.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/9e13e6a6c78799121ccf5cde9d47c693.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/679312c195e6d1dd94e705ee109784e8.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/575f0cdd5ddd8d1d8ce14f9584f2d36c.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/7e4767e60314d035a1aa56052d90752a.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/d33356483e88fa7c61900b80c7fdae1c.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                            </ul>
+                
+                <ul class="g-09b108">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/ac3393752c7d27a39a4f3e4d3b65de06.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/b9df844ada8ebeaa084d93b4f9c34215.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/3639ac123992ad01943249b1cdec4d40.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/536301cf5b4d3441483c78e97c0c8dc1.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/57cf044b6990a592591799789b1d0b51.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/f91ed63da812daf4890f008fdb9a56d9.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/0c5ab70a785e8c165e55ea0f56767b68.webp" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                            </ul>
+                
+                <ul class="c-a32ee7">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat 1                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat2                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat3                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat4                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat5                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat6                                </a>
+                            </li>
+                                                            </ul>
+                
+                <p class="m-5232f1">
+                    © 2025 lemoncasino-hu.com | Minden jog fenntartva                </p>
+            </footer>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

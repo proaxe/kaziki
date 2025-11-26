@@ -1,0 +1,73 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: November 25, 2025 6:54 pm
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.5.7.1
+WORDPRESS:	6.8.3
+PHP INFO:	8.1.9 | SAPI: apache2handler
+SERVER:		Apache 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 4294967296 (1536M default) 
+MEMORY STACK: 44MB
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   MYSQLDUMP
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Is Supported
+SQL CREATED: Eo9a0fO1FeqXG0ELfczzGwa_df89e7ea763dbb078394_20251125185432_database.sql
+SQL FILE SIZE: 527.14KB (539788)
+SQL FILE TIME: 2025-11-25 18:54:52
+SQL RUNTIME: 4.32 sec.
+
+********************************************************************************
+ARCHIVE (ZIP):
+********************************************************************************
+ARCHIVE DIR:  C:/OSPanel/domains/Kaziki
+ARCHIVE FILE: Eo9a0fO1FeqXG0ELfczzGwa_df89e7ea763dbb078394_20251125185432_archive.zip
+FILTERS: *OFF*
+DIRS:
+	not set
+FILES:
+	not set
+EXTS:  not set
+----------------------------------------
+COMPRESSING
+SIZE:	88.78MB
+STATS:	Dirs 655 | Files 4,627
+SQL ADDED: Eo9a0fO1FeqXG0ELfczzGwa_df89e7ea763dbb078394_20251125185432_database.sql
+ZipArchive Object
+(
+    [lastId] => 5281
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 5282
+    [filename] => C:\OSPanel\domains\Kaziki\wp-content\backups-dup-lite\tmp\Eo9a0fO1FeqXG0ELfczzGwa_df89e7ea763dbb078394_20251125185432_archive.zip
+    [comment] => 
+)
+
+FILE ADDED TO ZIP: 5281
+COMPRESSION RESULT: '1'
+COMPRESSED SIZE: 32.84MB
+ARCHIVE RUNTIME: 14.03 sec.
+MEMORY STACK: 46MB
+building installer
+ARCHIVE CONSISTENCY TEST: PASS
+
+********************************************************************************
+INTEGRITY CHECKS:
+********************************************************************************
+SQL FILE: 527.14KB
+INSTALLER FILE: 73.48KB
+ARCHIVE FILE: 34.69MB 
+EXPECTED FILE/DIRECTORY COUNT: 5,282
+ACTUAL FILE/DIRECTORY COUNT: 5,281
+ARCHIVE CONSISTENCY TEST: Pass
+
+********************************************************************************
+RECORD ID:[4]
+TOTAL PROCESS RUNTIME: 20.54 sec.
+PEAK PHP MEMORY USED: 46MB
+DONE PROCESSING => Eo9a0fO1FeqXG0ELfczzGwa November 25, 2025 6:55 pm
+

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Build 2</title>
+
+    <meta name="title" content="Build 2">
+    <meta name="description" content="fjgfdjfasj">
+
+    <meta property="og:title" content="Build 2">
+    <meta property="og:description" content="fjgfdjfasj">
+    <meta property="og:url" content="#">
+            <meta property="og:image" content="https://kaziki.uas/img/r8peK7GVONncwG30TB.webp">
+        <meta property="og:image:secure_url" content="https://kaziki.uas/img/r8peK7GVONncwG30TB.webp">
+    
+    <meta name="twitter:title" content="Build 2">
+    <meta name="twitter:description" content="fjgfdjfasj">
+            <meta name="twitter:image" content="https://kaziki.uas/img/r8peK7GVONncwG30TB.webp">
+    
+            <link type="image/png" href="https://kaziki.uas/img/7NKsnc7gO1NKfh7LgR2gdq.webp" rel="icon" sizes="16x16">
+        <link type="image/png" href="https://kaziki.uas/img/7NKsnc7gO1NKfh7LgR2gdq.webp" rel="icon" sizes="32x32">
+        <link type="image/x-icon" href="https://kaziki.uas/img/7NKsnc7gO1NKfh7LgR2gdq.webp" rel="icon">
+    
+    <link href="#" rel="canonical">
+
+    <meta name="robots" content="ALL">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="preload" as="font">
+
+    <style>
+        :root {
+            --color-bg: #1f3a34;
+            --color-text: #f4d78a;
+            --color-faq: #fff;
+            --color-bg-faq: #13212d;
+            --color-link: #f4d78a;
+            --color-link-hover: #ecbe15;
+            --border-color: #7cae8d;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            height: auto;
+            line-height: 1;
+            margin: 0;
+            outline: 0;
+            text-align: left;
+            top: 0 !important;
+            position: relative;
+            scroll-behavior: smooth;
+            text-rendering: optimizeSpeed;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: .03em;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+            line-height: 36px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        h5 {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        p {
+            line-height: 150%;
+            font-weight: 500;
+        }
+
+        a {
+            color: #f4d78a;
+        }
+
+        a:active, a:focus, a:hover {
+            outline: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 1rem auto;
+            padding-bottom: 1rem;
+            text-align: center;
+            display: table;
+            white-space: nowrap;
+            padding: 11px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 18px;
+            width: 100%;
+        }
+
+        table td {
+            padding: 11px 15px;
+            border: 2px solid var(--border-color);
+            border-style: none solid solid none;
+            background: #2c4b43;
+            white-space: normal;
+        }
+
+        table tr:nth-child(odd) td {
+            background: #3b5f54;
+        }
+
+        table tr:nth-child(even) td {
+            background: #455e46;
+        }
+
+        header {
+            display: none;
+        }
+
+        aside nav {
+            position: fixed;
+            padding: 30px;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: start;
+            max-width: 240px;
+            width: 100%;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .logo {
+            margin: 15px 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .button {
+            color: #1f3a34 !important;
+            background: #f4d78a;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            transition: .6s;
+            font-weight: bold;
+            width: -webkit-fill-available;
+        }
+
+        .btn {
+            color: #f4d78a;
+            background: #4a7a69;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            max-height: 48px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: -webkit-fill-available;
+            transition: .6s;
+            font-weight: bold;
+        }
+
+        .button:hover, .btn:hover {
+            transition: .6s;
+            transform: scale(1.05);
+        }
+
+        aside nav .button {
+            width: -webkit-fill-available;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .container ul {
+            list-style: inherit;
+            padding-left: 40px;
+        }
+
+        ul li a {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            background: #f4d78a;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+
+        .main_content {
+            padding: 20px 0px 0px 300px;
+        }
+
+        .main_content .btn, .main_content .button {
+            width: 320px;
+            margin: 1em auto;
+        }
+
+        .main_content-container {
+            padding: 0 24px;
+        }
+
+        .main_content img {
+            width: 100%;
+            border-radius: 18px;
+        }
+
+        .main_content p img {
+            margin: auto;
+            width: 100%;
+            max-height: 500px;
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .btn-list {
+            display: flex;
+            gap: 20px;
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .btn-list a {
+            border: 2px solid #f4d78a;
+            color: #f4d78a;
+            font-weight: bold;
+            border-radius: 40px;
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: .5s;
+            text-transform: uppercase;
+        }
+
+        .btn-list a:hover {
+            text-decoration: none;
+            transition: .5s;
+            filter: hue-rotate(45deg);
+        }
+
+        .btn-list .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .slot-list {
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .slot-list-item {
+            width: 15%;
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .slot-list-buttons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: #080808ad;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transition: .6s;
+        }
+
+        .slot-list-buttons .btn, .slot-list-buttons .button {
+            width: fit-content;
+        }
+
+        .slot-list-item:hover .slot-list-buttons {
+            opacity: 1;
+            transition: .6s;
+        }
+
+        .slot-list span {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            right: 0;
+            padding: 3px;
+            color: #f4d78a;
+            background: #4a7a69;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .faq {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .faq-items {
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            background: #2c4b43;
+            padding: 15px 20px;
+            margin: 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #2c4b43;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .faq-items.active .faq-question::after {
+            content: '−';
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            padding: 0 20px;
+            margin: 0;
+            overflow: hidden;
+            background: #2c4b43;
+            transition: all 0.4s ease;
+            opacity: 0;
+            line-height: 1.6;
+        }
+
+        .faq-items.active .faq-answer {
+            max-height: 500px;
+            padding: 15px 20px;
+            opacity: 1;
+        }
+
+        .faq-items.active {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payments {
+            background: #2c4b43;
+        }
+
+        .payments, .parthners {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            gap: 20px 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0;
+            border-bottom: 1px solid #C4C9DA;
+        }
+
+        .payments img, .parthners img {
+            max-height: 60px;
+        }
+
+        .menu-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 40px 0;
+            margin: 0;
+            background: #2c4b43;
+        }
+
+        .menu-footer a {
+            text-decoration: underline;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .all-right {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            border-top: 1px solid #C4C9DA;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-items');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', function() {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+                            <img src="https://kaziki.uas/img/zaDM9dkbToKO.svg" alt="ALT TEXT">
+                    </div>
+    </header>
+    
+    <aside>
+        <nav>
+            <a class="logo" href="https://lemoncasino-hu.com/">
+                                    <img src="https://kaziki.uas/img/zaDM9dkbToKO.svg" alt="ALT TEXT">
+                            </a>
+
+            <div class="buttons">
+                                                                                    <a class="button" href="https://lemoncasino-hu.com/">
+                            Bejelentkezés                        </a>
+                                                                    <a class="btn" href="https://lemoncasino-hu.com/">
+                            Regisztráció                        </a>
+                                                </div>
+            
+            <ul class="menu">
+                                                            <li>
+                            <a href="https://lemoncasino-hu.com/">
+                                                                    <span class="icon" style="mask-image: url('https://kaziki.uas/img/9rfscg227wp5o5Pef.svg');"></span>
+                                                                <span>Bonuszok</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://lemoncasino-hu.com/">
+                                                                    <span class="icon" style="mask-image: url('https://kaziki.uas/img/9rfscg227wp5o5Pef.svg');"></span>
+                                                                <span>Bonuszok</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+    </aside>
+    
+    <main>
+        <div class="main_content">
+            <div class="main_content-container">
+                <div class="hero">
+                                            <img src="https://kaziki.uas/img/zRg5hUCZHmpxB-scaled.webp" alt="ALT TEXT">
+                                    </div>
+                
+                <ul class="btn-list">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <span class="icon" style="mask-image: url('https://kaziki.uas/img/9rfscg227wp5o5Pef.svg');"></span>
+                                                                                                                <span>Poker</span>
+                                                                    </a>
+                            </li>
+                                                            </ul>
+                
+                <div class="slot-list">
+                                                                        <div class="slot-list-item">
+                                                                    <img src="https://kaziki.uas/img/Hjr1jEpygpFmI8YV2tmqC0hPs.webp" alt="aafasf">
+                                    <span>aafasf</span>
+                                                                <div class="slot-list-buttons">
+                                    <a class="button" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="btn" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="slot-list-item">
+                                                                    <img src="https://kaziki.uas/img/43ZFUIMnp3lMD6vw.webp" alt="fasfas">
+                                    <span>fasfas</span>
+                                                                <div class="slot-list-buttons">
+                                    <a class="button" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="btn" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="slot-list-item">
+                                                                    <img src="https://kaziki.uas/img/7NKsnc7gO1NKfh7LgR2gdq.webp" alt="fasf">
+                                    <span>fasf</span>
+                                                                <div class="slot-list-buttons">
+                                    <a class="button" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="btn" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="slot-list-item">
+                                                                    <img src="https://kaziki.uas/img/sW5wOBzn2x4hV.webp" alt="fas">
+                                    <span>fas</span>
+                                                                <div class="slot-list-buttons">
+                                    <a class="button" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="btn" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                            </div>
+                
+                <div class="container">
+                    <p>burky-cz</p>
+                </div>
+
+                <div class="faq">
+                                                                        <div class="faq-items">
+                                <p class="faq-question">burky-cz</p>
+                                <p class="faq-answer">burky-czburky-czburky-cz</p>
+                            </div>
+                                                    <div class="faq-items">
+                                <p class="faq-question">burky-cz</p>
+                                <p class="faq-answer">burky-czburky-czburky-cz</p>
+                            </div>
+                                                            </div>
+                
+                                                        <script type="application/ld+json">
+                        {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "burky-cz",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "burky-czburky-czburky-cz"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "burky-cz",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "burky-czburky-czburky-cz"
+            }
+        }
+    ]
+}                    </script>
+                
+            </div>
+            
+            <footer>
+                <ul class="payments">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/0DHpvB841298nBAFLFrOYQf.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/korZoEtQPZU.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/j6TCgQXLXxgN0k.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/LxnrKSzw51QeI5hi0mMzvRO.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/nbZZWYj4NCog.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/COwPs70QLg4eawnh8NZttXx.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/1nfWYvSfdFMxIK790.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/ULB4w7Bp4X6.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/kjJgQudPddPmEDvrYBs.svg" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                            </ul>
+                
+                <ul class="parthners">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/pWq3jdmGpSzlzcILYd.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/i5YTLIspnaWY3rvyjZj6L.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/Tti937oCzBUa9lKzNp.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/vSc2QqBmwmMO3wuq9AHNIV0.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/6JCubQLv8V37VY7eai6LIoM8.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/eYG0GbwztZY4GVwOL.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="https://kaziki.uas/img/Ls7DF20t9DGUs3H5VqhrE.webp" alt="ALT TEXT">
+                                                                    </a>
+                            </li>
+                                                            </ul>
+                
+                <ul class="menu-footer">
+                                                                        <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                    Adatvédelmi szabályzat                                </a>
+                            </li>
+                                                            </ul>
+                
+                <p class="all-right">
+                    © 2025 lemoncasino-hu.com | Minden jog fenntartva                </p>
+            </footer>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
+        
