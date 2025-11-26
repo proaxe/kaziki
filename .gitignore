@@ -1,0 +1,63 @@
+# WordPress core files
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/license.txt
+/readme.html
+/index.php
+
+# WordPress config
+wp-config.php
+wp-config-sample.php
+
+# Database
+*.sql
+*.sql.gz
+
+# Logs
+*.log
+error_log
+debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Uploads (except builds)
+wp-content/uploads/*
+!wp-content/uploads/builds/
+
+# Keep only builds directory
+wp-content/uploads/builds/*/
+!wp-content/uploads/builds/*/index.html
+!wp-content/uploads/builds/*/img/
+
+# Plugins (optional - uncomment if you don't want to version plugins)
+# wp-content/plugins/
+
+# Themes (keep only kaziki theme)
+wp-content/themes/*
+!wp-content/themes/kaziki/
+
+# Cache
+wp-content/cache/
+wp-content/advanced-cache.php
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+tmp/
+temp/
+*.tmp

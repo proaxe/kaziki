@@ -1,0 +1,65 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    inputs:
+      build_version:
+        description: 'Build version to deploy (e.g., version-123)'
+        required: false
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Determine build directory
+        id: build_dir
+        run: |
+          if [ -n "${{ github.event.inputs.build_version }}" ]; then
+            BUILD_DIR="wp-content/uploads/builds/${{ github.event.inputs.build_version }}"
+            echo "Using specified build: $BUILD_DIR"
+          else
+            # Find the latest build directory
+            LATEST_BUILD=$(ls -td wp-content/uploads/builds/version-* 2>/dev/null | head -1)
+            if [ -z "$LATEST_BUILD" ]; then
+              echo "Error: No builds found in wp-content/uploads/builds/"
+              exit 1
+            fi
+            BUILD_DIR="$LATEST_BUILD"
+            echo "Using latest build: $BUILD_DIR"
+          fi
+          
+          # Verify build directory exists and has index.html
+          if [ ! -f "$BUILD_DIR/index.html" ]; then
+            echo "Error: No index.html found in $BUILD_DIR"
+            exit 1
+          fi
+          
+          echo "build_dir=$BUILD_DIR" >> $GITHUB_OUTPUT
+          echo "Deploying from: $BUILD_DIR"
+      
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+          directory: ${{ steps.build_dir.outputs.build_dir }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref_name }}
+      
+      - name: Deployment Summary
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "📦 Build directory: ${{ steps.build_dir.outputs.build_dir }}"
+          echo "🌐 Project: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}"
+          echo "🔗 Your site should be available at: https://${{ secrets.CLOUDFLARE_PROJECT_NAME }}.pages.dev"
