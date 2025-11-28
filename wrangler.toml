@@ -1,0 +1,8 @@
+name = "burky-cz"
+compatibility_date = "2025-11-28"
+
+[site]
+bucket = "./wp-content/uploads/builds"
+
+# Pages configuration
+pages_build_output_dir = "./wp-content/uploads/builds"
