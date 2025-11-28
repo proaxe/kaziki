@@ -34,13 +34,13 @@
     
     <style>
         :root {
-            --s-6d72a0: #375e30;
-            --d-df5bd5: #f4d78a;
+            --s-3aa984: #375e30;
+            --f-dd0687: #f4d78a;
             --kz-faq: #fff;
-            --s-6d72a0-faq: #13212d;
-            --x-d75f99: #f4d78a;
-            --x-d75f99-hover: #ecbe15;
-            --s-604be2: #7cae8d;
+            --s-3aa984-faq: #13212d;
+            --e-14df7b: #f4d78a;
+            --e-14df7b-hover: #ecbe15;
+            --d-e92481: #7cae8d;
         }
 
         * {
@@ -49,8 +49,8 @@
 
         body {
             -webkit-font-smoothing: antialiased;
-            background-color: var(--s-6d72a0);
-            color: var(--d-df5bd5);
+            background-color: var(--s-3aa984);
+            color: var(--f-dd0687);
             font-family: "Roboto", sans-serif;
             font-size: 16px;
             height: auto;
@@ -99,7 +99,7 @@
             line-height: 150%;
             font-weight: 500;
         }
-        main li{
+        li{
             margin-bottom:.9em;
         }
         a {
@@ -109,9 +109,7 @@
         a:active, a:focus, a:hover {
             outline: 0;
         }
-        main{
-            padding-top: 100px;
-        }
+
         table {
             border-collapse: collapse;
             margin: 1rem auto;
@@ -121,14 +119,14 @@
             overflow-x: auto;
             white-space: nowrap;
             padding: 11px 15px;
-            border: 2px solid var(--s-604be2);
+            border: 2px solid var(--d-e92481);
             border-radius: 18px;
             width: 100%;
         }
 
         table td {
             padding: 11px 15px;
-            border: 2px solid var(--s-604be2);
+            border: 2px solid var(--d-e92481);
             border-style: none solid solid none;
             background: #2c4b43;
             white-space: normal;
@@ -142,21 +140,21 @@
             background: #455e46;
         }
 
-        .k-e00846 {
+        .g-82aa09 {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: var(--s-6d72a0);
-            border-bottom: 1px solid var(--s-604be2);
+            background: var(--s-3aa984);
+            border-bottom: 1px solid var(--d-e92481);
             padding: 15px 20px;
             z-index: 1000;
             align-items: center;
             justify-content: space-between;
         }
 
-        .m-71b8bd {
+        .p-fb3ab3 {
             width: 30px;
             height: 25px;
             display: flex;
@@ -166,43 +164,38 @@
             z-index: 1001;
         }
 
-        .m-71b8bd span {
+        .p-fb3ab3 span {
             width: 100%;
             height: 3px;
-            background: var(--d-df5bd5);
+            background: var(--f-dd0687);
             transition: all 0.3s;
             border-radius: 2px;
         }
 
-        .m-71b8bd.active span:nth-child(1) {
+        .p-fb3ab3.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
 
-        .m-71b8bd.active span:nth-child(2) {
+        .p-fb3ab3.active span:nth-child(2) {
             opacity: 0;
         }
 
-        .m-71b8bd.active span:nth-child(3) {
+        .p-fb3ab3.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
 
-        .c-a920ff {
+        .n-6219f5 {
             max-height: 40px;
         }
-        .s-f895c5{
-            max-width:1400px;
-            margin:0 auto;
-        }
-        header.g-e23c38 .s-f895c5 {
-         display: grid !important;
-        grid-template-columns: 1fr 2fr 1fr;
-        gap: 20px;
+
+        header.b-acfd75 {
+            display: none!important;
         }
 
-        .r-bd6e80 {
-            display:none;
+        .q-29fa23 {
             position: fixed;
             padding: 30px;
+            display: flex;
             height: 100vh;
             flex-direction: column;
             gap: 20px;
@@ -210,34 +203,34 @@
             justify-content: start;
             max-width: 300px;
             width: 100%;
-            border-right: 1px solid var(--s-604be2);
-            background: var(--s-6d72a0);
+            border-right: 1px solid var(--d-e92481);
+            background: var(--s-3aa984);
             z-index: 999;
             overflow-y: auto;
         }
 
-        .g-93f225 {
-           display: flex;
-           align-items: center;
+        .x-111fd8 {
+            margin: 15px 0;
         }
 
-        .g-93f225 img {
+        .x-111fd8 img {
             max-width: 100%;
             height: auto;
         }
 
-        .c-4ecae3 {
+        .d-67c120 {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 12px;
             width: 100%;
         }
 
-        .k-d16aa5 {
+        .b-03779c {
             color: #1f3a34 !important;
             background: #f4d78a;
-            border: 1px solid var(--s-604be2);
+            border: 1px solid var(--d-e92481);
             text-decoration: none;
             max-height: 48px;
             padding: 12px 20px;
@@ -253,10 +246,10 @@
             width: -webkit-fill-available;
         }
 
-        .f-e3f860 {
+        .c-fc7e3b {
             color: #f4d78a;
             background: #0da000;
-            border: 1px solid var(--s-604be2);
+            border: 1px solid var(--d-e92481);
             text-decoration: none;
             max-height: 48px;
             padding: 12px 20px;
@@ -271,7 +264,7 @@
             font-weight: bold;
         }
 
-        .k-d16aa5:hover, .f-e3f860:hover {
+        .b-03779c:hover, .c-fc7e3b:hover {
             transition: .6s;
             transform: scale(1.05);
         }
@@ -279,7 +272,7 @@
         .button {
             color: #1f3a34 !important;
             background: #f4d78a;
-            border: 1px solid var(--s-604be2);
+            border: 1px solid var(--d-e92481);
             text-decoration: none;
             max-height: 48px;
             padding: 12px 20px;
@@ -295,13 +288,12 @@
                 width: fit-content;
     min-width: 320px;
     margin:auto;
-        margin-bottom: .9em;
         }
 
         .btn {
             color: #f4d78a;
             background: #0da000;
-            border: 1px solid var(--s-604be2);
+            border: 1px solid var(--d-e92481);
             text-decoration: none;
             max-height: 48px;
             padding: 12px 20px;
@@ -316,7 +308,6 @@
             transition: .6s;
             font-weight: bold;
              margin:auto;
-                 margin-bottom: .9em;
         }
 
         .button:hover, .btn:hover {
@@ -324,17 +315,21 @@
             transform: scale(1.05);
         }
 
-        .x-c39c8d {
+        .z-2573a9 {
             list-style: none;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             gap: 20px;
             width: 100%;
         }
-       
 
-        .x-c39c8d li a {
+        .r-10d2f6 .z-2573a9 {
+            list-style: inherit;
+            padding-left: 40px;
+        }
+
+        .z-2573a9 li a {
             display: flex;
             gap: 12px;
             align-items: center;
@@ -342,11 +337,11 @@
             justify-content: center;
         }
 
-        .x-c39c8d li a:hover {
+        .z-2573a9 li a:hover {
             text-decoration: underline;
         }
 
-        .a-a83d02 {
+        .s-cb69ed {
             width: 24px;
             height: 24px;
             background: #f4d78a;
@@ -357,19 +352,22 @@
             display: inline-block;
         }
 
+        .p-599a37 {
+            padding: 20px 0px 0px 300px;
+        }
 
        
 
-        .c-434a35 {
+        .s-2b0604 {
             padding: 0 24px;
         }
 
-        .c-434a35 img {
+        .s-2b0604 img {
             width: 100%;
             border-radius: 18px;
         }
 
-        .c-434a35 p img {
+        .s-2b0604 p img {
             margin: auto;
             width: 100%;
             max-height: 500px;
@@ -378,7 +376,7 @@
             display: flex;
         }
 
-        .h-53ea1a {
+        .t-0c86c1 {
             display: flex;
             gap: 20px;
             flex-direction: row;
@@ -387,7 +385,7 @@
             list-style: none;
         }
 
-        .h-53ea1a a {
+        .t-0c86c1 a {
             border: 2px solid #f4d78a;
             color: #f4d78a;
             font-weight: bold;
@@ -402,32 +400,32 @@
             align-items: center;
         }
 
-        .h-53ea1a a:hover {
+        .t-0c86c1 a:hover {
             text-decoration: none;
             transition: .5s;
             filter: hue-rotate(45deg);
         }
 
-        .h-53ea1a .a-a83d02 {
+        .t-0c86c1 .s-cb69ed {
             width: 20px;
             height: 20px;
         }
 
-        .v-2131a7 {
+        .g-c84b56 {
             display: flex;
             gap: 12px;
             justify-content: space-between;
             flex-wrap: wrap;
         }
 
-        .w-38e4d3 {
+        .q-16288b {
             width: 15%;
             position: relative;
             border-radius: 18px;
             overflow: hidden;
         }
 
-        .t-874c8b {
+        .x-5c983d {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -442,16 +440,16 @@
             transition: .6s;
         }
 
-        .t-874c8b .f-e3f860, .t-874c8b .k-d16aa5 {
+        .x-5c983d .c-fc7e3b, .x-5c983d .b-03779c {
             width: fit-content;
         }
 
-        .w-38e4d3:hover .t-874c8b {
+        .q-16288b:hover .x-5c983d {
             opacity: 1;
             transition: .6s;
         }
 
-        .w-38e4d3 .x-e14d5d {
+        .q-16288b .r-d5e0e8 {
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -463,20 +461,20 @@
             text-align: center;
         }
 
-        .f-9aef29 {
+        .m-b2f2ee {
             width: 100%;
             margin: 0 auto;
         }
 
-        .n-0f66d6 {
-            border: 1px solid var(--s-604be2);
+        .k-623871 {
+            border: 1px solid var(--d-e92481);
             border-radius: 18px;
             margin-bottom: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .w-86ad36 {
+        .k-3fd70e {
             background: #2c4b43;
             padding: 15px 20px;
             margin: 0;
@@ -487,11 +485,11 @@
             transition: all 0.3s ease;
         }
 
-        .w-86ad36:hover {
+        .k-3fd70e:hover {
             background: #2c4b43;
         }
 
-        .w-86ad36::after {
+        .k-3fd70e::after {
             content: '+';
             position: absolute;
             right: 20px;
@@ -502,12 +500,12 @@
             transition: all 0.3s ease;
         }
 
-        .n-0f66d6.active .w-86ad36::after {
+        .k-623871.active .k-3fd70e::after {
             content: '−';
             transform: translateY(-50%) rotate(0deg);
         }
 
-        .m-492695 {
+        .v-58135f {
             max-height: 0;
             padding: 0 20px;
             margin: 0;
@@ -518,17 +516,17 @@
             line-height: 1.6;
         }
 
-        .n-0f66d6.active .m-492695 {
+        .k-623871.active .v-58135f {
             max-height: 500px;
             padding: 15px 20px;
             opacity: 1;
         }
 
-        .n-0f66d6.active {
+        .k-623871.active {
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .f-afacd7 {
+        .k-b25f3a {
             background: #2c4b43;
             display: flex;
             justify-content: center;
@@ -542,11 +540,11 @@
             border-bottom: 1px solid #C4C9DA;
         }
 
-        .f-afacd7 img, .n-45b654 img {
+        .k-b25f3a img, .h-bdd227 img {
             max-height: 60px;
         }
 
-        .n-45b654 {
+        .h-bdd227 {
             display: flex;
             justify-content: center;
             padding: 40px;
@@ -559,7 +557,7 @@
             border-bottom: 1px solid #C4C9DA;
         }
 
-        .t-31ce4e {
+        .x-9ebed8 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 20px;
@@ -570,13 +568,13 @@
             text-align:center;
         }
 
-        .t-31ce4e a {
+        .x-9ebed8 a {
             text-decoration: underline;
             text-align: center;
             justify-content: center;
         }
 
-        .w-9fb586 {
+        .t-7f2d30 {
             padding: 20px;
             margin: 0;
             text-align: center;
@@ -584,7 +582,7 @@
         }
 
 
-        .k-e00846-overlay {
+        .g-82aa09-overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -597,37 +595,19 @@
             transition: opacity 0.3s ease;
         }
 
-        .k-e00846-overlay.active {
+        .g-82aa09-overlay.active {
             display: block;
             opacity: 1;
              z-index: 1001;
         }
 
-         @media (min-width: 992px) {
-            .g-e23c38 {
-                display: block!important;
-                 border-bottom: 1px solid var(--s-604be2);
-                 background: var(--s-6d72a0);    
-                 padding:15px 24px;
-                 width:100%;
-        position: fixed;
-        z-index: 1010;
-            }
-            
-          
-        }
+ 
         @media (max-width: 991px) {
-             header.g-e23c38 .s-f895c5 {
-                display: none!important;
-            }
-            main{
-                padding-top: 0;
-            }
-            .k-e00846 {
+            .g-82aa09 {
                 display: flex;
             }
 
-            .r-bd6e80 {
+            .q-29fa23 {
                 left: -100%;
                 transition: left 0.3s ease;
                 top: 0;
@@ -635,40 +615,40 @@
                 z-index: 1001;
             }
 
-            .r-bd6e80.active {
+            .q-29fa23.active {
                 left: 0;
             }
 
-            .a-483e3a {
+            .p-599a37 {
                 padding: 80px 0 0 0;
             }
 
-            .w-38e4d3 {
+            .q-16288b {
                 width:100%;
             }
 
-            .t-31ce4e {
+            .x-9ebed8 {
                 grid-template-columns: 1fr;
             }
-                    .c-434a35 p img {
+                    .s-2b0604 p img {
             margin: auto;
             max-height: 500px;
             width: 100%;
             margin: 0 auto;
             display: flex;
         }
-          .v-2131a7 {
+          .g-c84b56 {
             display: grid;
             gap: 12px;
            grid-template-columns:1fr 1fr;
         }
-         .c-434a35 {
+         .s-2b0604 {
             padding: 0 15px;
         }
-                .f-afacd7 img, .n-45b654 img {
+                .k-b25f3a img, .h-bdd227 img {
             max-height: 30px;
         }
-         .r-bd6e80 {
+         .q-29fa23 {
             position: fixed;
             padding: 20px;
             display: flex;
@@ -679,8 +659,8 @@
             justify-content: start;
             max-width: 250px;
             width: 100%;
-            border-right: 1px solid var(--s-604be2);
-            background: var(--s-6d72a0);
+            border-right: 1px solid var(--d-e92481);
+            background: var(--s-3aa984);
             z-index: 1005;
             overflow-y: auto;
         }
@@ -693,26 +673,25 @@
             overflow-x: auto;
             white-space: nowrap;
             padding:0;
-            border: 2px solid var(--s-604be2);
+            border: 2px solid var(--d-e92481);
             border-radius: 18px;
             width: 100%;
         }
-        .x-c39c8d {
-          flex-direction: column;
-        }
-         .c-4ecae3 {
-             flex-direction: column;
-        }
         }
 
-
+        @media (min-width: 992px) {
+            .b-acfd75 {
+                display: block!important;
+            }
+          
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.n-0f66d6');
+            const faqItems = document.querySelectorAll('.k-623871');
 
             faqItems.forEach(item => {
-                const question = item.querySelector('.w-86ad36');
+                const question = item.querySelector('.k-3fd70e');
 
                 question.addEventListener('click', function() {
                     faqItems.forEach(otherItem => {
@@ -724,9 +703,9 @@
                 });
             });
 
-            const hamburger = document.querySelector('.m-71b8bd');
-            const sidebar = document.querySelector('.r-bd6e80');
-            const overlay = document.querySelector('.k-e00846-overlay');
+            const hamburger = document.querySelector('.p-fb3ab3');
+            const sidebar = document.querySelector('.q-29fa23');
+            const overlay = document.querySelector('.g-82aa09-overlay');
 
             if (hamburger && sidebar && overlay) {
                 hamburger.addEventListener('click', function() {
@@ -754,69 +733,46 @@
 </head>
 
 <body>
-    <div class="k-e00846-overlay"></div>
+    <div class="g-82aa09-overlay"></div>
     
-    <header class="k-e00846">
+    <header class="g-82aa09">
         
-                    <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2" class="c-a920ff">
-                <div class="m-71b8bd">
+                    <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2" class="n-6219f5">
+                <div class="p-fb3ab3">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </header>
 
-    <header class="g-e23c38">
-        <div class="s-f895c5">
-             <div class="g-93f225">
+    <header class="b-acfd75">
+        <div class="x-111fd8">
                             <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2">
-                    </div>    
-        <ul class="x-c39c8d">
-                                                <li>
-                        <a href="https://lemoncasino-hu.com/">
-                                                            <span class="a-a83d02" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
-                                                        <span>Bonuszok</span>
-                        </a>
-                    </li>
-                                    <li>
-                        <a href="https://lemoncasino-hu.com/">
-                                                            <span class="a-a83d02" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
-                                                        <span>Bonuszok</span>
-                        </a>
-                    </li>
-                                    </ul>
-          <div class="c-4ecae3">
-                                                                    <a class="k-d16aa5" href="https://lemoncasino-hu.com/">
-                        Bejelentkezés                    </a>
-                                                        <a class="f-e3f860" href="https://lemoncasino-hu.com/">
-                        Regisztráció                    </a>
-                                    </div>
-        </div>
-       
+                    </div>
     </header>
     
-    <aside class="r-bd6e80">
-        <a class="g-93f225" href="https://lemoncasino-hu.com/">
+    <aside class="q-29fa23">
+        <a class="x-111fd8" href="https://lemoncasino-hu.com/">
                             <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="ALT TEXT2">
                     </a>
 
-        <div class="c-4ecae3">
-                                                                    <a class="k-d16aa5" href="https://lemoncasino-hu.com/">
+        <div class="d-67c120">
+                                                                    <a class="b-03779c" href="https://lemoncasino-hu.com/">
                         Bejelentkezés                    </a>
-                                                        <a class="f-e3f860" href="https://lemoncasino-hu.com/">
+                                                        <a class="c-fc7e3b" href="https://lemoncasino-hu.com/">
                         Regisztráció                    </a>
                                     </div>
         
-        <ul class="x-c39c8d">
+        <ul class="z-2573a9">
                                                 <li>
                         <a href="https://lemoncasino-hu.com/">
-                                                            <span class="a-a83d02" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
+                                                            <span class="s-cb69ed" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
                                                         <span>Bonuszok</span>
                         </a>
                     </li>
                                     <li>
                         <a href="https://lemoncasino-hu.com/">
-                                                            <span class="a-a83d02" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
+                                                            <span class="s-cb69ed" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
                                                         <span>Bonuszok</span>
                         </a>
                     </li>
@@ -824,63 +780,61 @@
     </aside>
     
     <main>
-        
-            <div class="a-483e3a">
-                <div class="s-f895c5">
-            <div class="c-434a35">
-                <div class="g-c91d62">
+        <div class="p-599a37">
+            <div class="s-2b0604">
+                <div class="z-13ea9c">
                                             <img src="img/5ad3a72150693c4c1d1564364804e5bf.webp" alt="ALT TEXT2">
                                     </div>
                 
-                <ul class="h-53ea1a">
+                <ul class="t-0c86c1">
                                                                         <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                                                            <span class="a-a83d02" style="mask-image: url('img/70b1043ac43277c84841fb491fdb5a8e.svg');"></span>
+                                                                            <span class="s-cb69ed" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
+                                                                                                                <span>Bacarat</span>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <span class="s-cb69ed" style="mask-image: url('img/70b1043ac43277c84841fb491fdb5a8e.svg');"></span>
                                                                                                                 <span>Slots</span>
                                                                     </a>
                             </li>
                                                     <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                                                            <span class="a-a83d02" style="mask-image: url('img/da0f38d65dfea7924b38fc6389ac996b.svg');"></span>
+                                                                            <span class="s-cb69ed" style="mask-image: url('img/da0f38d65dfea7924b38fc6389ac996b.svg');"></span>
                                                                                                                 <span>Poker</span>
-                                                                    </a>
-                            </li>
-                                                    <li>
-                                <a href="https://lemoncasino-hu.com/">
-                                                                            <span class="a-a83d02" style="mask-image: url('img/fa7ea9a8729f3c58eff9df7667cbc477.svg');"></span>
-                                                                                                                <span>Bacarat</span>
                                                                     </a>
                             </li>
                                                             </ul>
                 
-                <div class="v-2131a7">
-                                                                        <div class="w-38e4d3">
-                                                                    <img src="img/8ff69f1115f4d5bf54826db76f8932cc.webp" alt="Zeusik3">
-                                    <span class="x-e14d5d">Zeusik3</span>
-                                                                <div class="t-874c8b">
-                                    <a class="k-d16aa5" href="https://lemoncasino-hu.com/">Play</a>
-                                    <a class="f-e3f860" href="https://lemoncasino-hu.com/">Demo</a>
-                                </div>
-                            </div>
-                                                    <div class="w-38e4d3">
-                                                                    <img src="img/6b85fa3f703f416b9a0c6365b055296d.webp" alt="Zeusik1">
-                                    <span class="x-e14d5d">Zeusik1</span>
-                                                                <div class="t-874c8b">
-                                    <a class="k-d16aa5" href="https://lemoncasino-hu.com/">Play</a>
-                                    <a class="f-e3f860" href="https://lemoncasino-hu.com/">Demo</a>
-                                </div>
-                            </div>
-                                                    <div class="w-38e4d3">
+                <div class="g-c84b56">
+                                                                        <div class="q-16288b">
                                                                     <img src="img/ee428098946a90a4f29a15e12a5573da.webp" alt="Zeusik2">
-                                    <span class="x-e14d5d">Zeusik2</span>
-                                                                <div class="t-874c8b">
-                                    <a class="k-d16aa5" href="https://lemoncasino-hu.com/">Play</a>
-                                    <a class="f-e3f860" href="https://lemoncasino-hu.com/">Demo</a>
+                                    <span class="r-d5e0e8">Zeusik2</span>
+                                                                <div class="x-5c983d">
+                                    <a class="b-03779c" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-fc7e3b" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="q-16288b">
+                                                                    <img src="img/8ff69f1115f4d5bf54826db76f8932cc.webp" alt="Zeusik3">
+                                    <span class="r-d5e0e8">Zeusik3</span>
+                                                                <div class="x-5c983d">
+                                    <a class="b-03779c" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-fc7e3b" href="https://lemoncasino-hu.com/">Demo</a>
+                                </div>
+                            </div>
+                                                    <div class="q-16288b">
+                                                                    <img src="img/6b85fa3f703f416b9a0c6365b055296d.webp" alt="Zeusik1">
+                                    <span class="r-d5e0e8">Zeusik1</span>
+                                                                <div class="x-5c983d">
+                                    <a class="b-03779c" href="https://lemoncasino-hu.com/">Play</a>
+                                    <a class="c-fc7e3b" href="https://lemoncasino-hu.com/">Demo</a>
                                 </div>
                             </div>
                                                             </div>
                 
-                <div class="s-f895c5">
+                <div class="r-10d2f6">
                     <h1>Lemon Casino Hungary: Megbízható játék 2021 óta</h1>
 <p>Üdvözöljük a Lemon Casino Hungary oldalán – ez az Ön megbízható online játékhelye. 2021 óta működünk az Orange Entertainment B.V. üzemeltetésében, és a Curaçao Gaming Control Board által kiadott engedéllyel rendelkezünk. Platformunk biztonságos és felhasználóbarát környezetet kínál a magyar játékosok számára.</p>
 <p>Játékgyűjteményünk több mint 5400 címet tartalmaz, beleértve a nyerőgépeket, asztali játékokat, élő osztós lehetőségeket és játéktermi stílusú játékokat is. Olyan vezető szoftverszolgáltatókkal működünk együtt, mint a NetEnt, a Microgaming, a Play’n GO és az Evolution Gaming, hogy változatos és magas színvonalú élményt biztosítsunk.</p>
@@ -1084,14 +1038,14 @@
 <p>A regisztráció után a Lemon Casino bejelentkezés gyors és egyszerű. Kattintson a „Bejelentkezés” gombra, adja meg a regisztrált e-mail címét és jelszavát, és azonnal hozzáférést kap a játékokhoz, promóciókhoz és fiókfunkciókhoz. Kényelme érdekében lehetősége van arra is, hogy eszközén bejelentkezve maradjon.</p>
                 </div>
 
-                <div class="f-9aef29">
-                                                                        <div class="n-0f66d6">
-                                <p class="w-86ad36">Faq1</p>
-                                <p class="m-492695">faq text1</p>
+                <div class="m-b2f2ee">
+                                                                        <div class="k-623871">
+                                <p class="k-3fd70e">Faq1</p>
+                                <p class="v-58135f">faq text1</p>
                             </div>
-                                                    <div class="n-0f66d6">
-                                <p class="w-86ad36">Faq2</p>
-                                <p class="m-492695">faq2 text</p>
+                                                    <div class="k-623871">
+                                <p class="k-3fd70e">Faq2</p>
+                                <p class="v-58135f">faq2 text</p>
                             </div>
                                                             </div>
                 
@@ -1120,17 +1074,27 @@
 }                    </script>
                 
             </div>
-             </div>
+            
             <footer>
-                <ul class="f-afacd7">
+                <ul class="k-b25f3a">
                                                                         <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/c44f80741e159bdb8cb84161f1198263.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
                                 <a href="https://lemoncasino-hu.com/">
                                                                             <img src="img/9e13e6a6c78799121ccf5cde9d47c693.svg" alt="ALT TEXT2">
                                                                     </a>
                             </li>
                                                     <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                                                            <img src="img/c44f80741e159bdb8cb84161f1198263.svg" alt="ALT TEXT2">
+                                                                            <img src="img/b26266c79b62438302f0ae30a3bd6f5b.svg" alt="ALT TEXT2">
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://lemoncasino-hu.com/">
+                                                                            <img src="img/972ec3a04c17d38f436fccdecf2a097a.svg" alt="ALT TEXT2">
                                                                     </a>
                             </li>
                                                     <li>
@@ -1148,22 +1112,12 @@
                                                                             <img src="img/d3e26db2bb4376cc453ef24e56bdfb88.svg" alt="ALT TEXT2">
                                                                     </a>
                             </li>
-                                                    <li>
-                                <a href="https://lemoncasino-hu.com/">
-                                                                            <img src="img/b26266c79b62438302f0ae30a3bd6f5b.svg" alt="ALT TEXT2">
-                                                                    </a>
-                            </li>
-                                                    <li>
-                                <a href="https://lemoncasino-hu.com/">
-                                                                            <img src="img/972ec3a04c17d38f436fccdecf2a097a.svg" alt="ALT TEXT2">
-                                                                    </a>
-                            </li>
                                                             </ul>
                 
-                <ul class="n-45b654">
+                <ul class="h-bdd227">
                                                                         <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                                                            <img src="img/536301cf5b4d3441483c78e97c0c8dc1.webp" alt="ALT TEXT2">
+                                                                            <img src="img/57cf044b6990a592591799789b1d0b51.webp" alt="ALT TEXT2">
                                                                     </a>
                             </li>
                                                     <li>
@@ -1173,17 +1127,17 @@
                             </li>
                                                     <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                                                            <img src="img/57cf044b6990a592591799789b1d0b51.webp" alt="ALT TEXT2">
+                                                                            <img src="img/0c5ab70a785e8c165e55ea0f56767b68.webp" alt="ALT TEXT2">
                                                                     </a>
                             </li>
                                                     <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                                                            <img src="img/0c5ab70a785e8c165e55ea0f56767b68.webp" alt="ALT TEXT2">
+                                                                            <img src="img/536301cf5b4d3441483c78e97c0c8dc1.webp" alt="ALT TEXT2">
                                                                     </a>
                             </li>
                                                             </ul>
                 
-                <ul class="t-31ce4e">
+                <ul class="x-9ebed8">
                                                                         <li>
                                 <a href="https://lemoncasino-hu.com/">
                                     Menu 4                                </a>
@@ -1194,21 +1148,19 @@
                             </li>
                                                     <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                    Menu 1                                </a>
+                                    Menu 2                                </a>
                             </li>
                                                     <li>
                                 <a href="https://lemoncasino-hu.com/">
-                                    Menu 2                                </a>
+                                    Menu 1                                </a>
                             </li>
                                                             </ul>
                 
-                <p class="w-9fb586">
+                <p class="t-7f2d30">
                     © 2025 lemoncasino-hu.com | Minden jog fenntartva                </p>
             </footer>
 
         </div>
-       
-        
 
     </main>
 </body>
