@@ -43,7 +43,7 @@ jobs:
           
           echo "Deploying..."
           wrangler pages deploy wp-content/uploads/builds/version-${{ steps.detect.outputs.build_id }} \
-            --project-name=burky-cz \
+            --project-name=kaziki \
             --branch=build-${{ steps.detect.outputs.build_id }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
