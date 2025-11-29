@@ -37,6 +37,11 @@ jobs:
         if: steps.detect.outputs.build_id != ''
         run: |
           npm install -g wrangler
+          
+          echo "Debugging: Listing projects..."
+          wrangler pages project list
+          
+          echo "Deploying..."
           wrangler pages deploy wp-content/uploads/builds/version-${{ steps.detect.outputs.build_id }} \
             --project-name=burky-cz \
             --branch=build-${{ steps.detect.outputs.build_id }}
