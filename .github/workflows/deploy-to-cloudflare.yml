@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'wp-content/uploads/builds/**'
+  workflow_dispatch:
 
 jobs:
   deploy:

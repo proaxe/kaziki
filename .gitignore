@@ -27,19 +27,6 @@ desktop.ini
 
 # Editor files
 *.swp
-*.swo
-*~
-.vscode/
-.idea/
-
-# Uploads (except builds)
-wp-content/uploads/*
-!wp-content/uploads/builds/
-
-# Keep only builds directory
-wp-content/uploads/builds/*/
-!wp-content/uploads/builds/*/index.html
-!wp-content/uploads/builds/*/img/
 
 # Plugins (optional - uncomment if you don't want to version plugins)
 # wp-content/plugins/
@@ -61,3 +48,14 @@ wp-content/advanced-cache.php
 tmp/
 temp/
 *.tmp
+# Uploads (except builds)
+wp-content/uploads/*
+!wp-content/uploads/builds/
+
+# Keep only builds directory
+wp-content/uploads/builds/*/
+!wp-content/uploads/builds/*/index.html
+!wp-content/uploads/builds/*/img/
+
+# Secrets
+wp-content/themes/kaziki/inc/secrets.php
