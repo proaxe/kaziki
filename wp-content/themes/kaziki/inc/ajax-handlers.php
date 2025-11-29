@@ -16,6 +16,7 @@ class Kaziki_Ajax_Handlers {
         add_action('wp_ajax_kaziki_generate_build', array($this, 'generate_build'));
         add_action('wp_ajax_kaziki_rebuild', array($this, 'rebuild'));
         add_action('wp_ajax_kaziki_deploy_cloudflare', array($this, 'deploy_cloudflare'));
+        add_action('wp_ajax_kaziki_git_push_deploy', array($this, 'git_push_deploy'));
         add_action('wp_ajax_kaziki_download_build', array($this, 'download_build'));
         add_action('wp_ajax_kaziki_delete_build', array($this, 'delete_build'));
         add_action('wp_ajax_kaziki_verify_cloudflare', array($this, 'verify_cloudflare'));
@@ -151,6 +152,64 @@ class Kaziki_Ajax_Handlers {
             
             if ($result['success']) {
                 wp_send_json_success($result);
+            } else {
+                wp_send_json_error($result);
+            }
+        } catch (Exception $e) {
+            error_log('Deployment Exception: ' . $e->getMessage());
+            wp_send_json_error(array('message' => $e->getMessage()));
+        }
+    }
+    
+    /**
+     * Git Push and Deploy - Push to main branch, GitHub Actions handles Cloudflare deployment
+     */
+    public function git_push_deploy() {
+        check_ajax_referer('kaziki_build_nonce', 'nonce');
+        
+        if (!current_user_can('edit_posts')) {
+            wp_send_json_error(array('message' => 'Permission denied'));
+        }
+        
+        $build_id = intval($_POST['build_id']);
+        
+        if (!$build_id) {
+            wp_send_json_error(array('message' => 'Invalid build ID'));
+        }
+        
+        // Push to GitHub main branch
+        try {
+            $github_deployer = new Kaziki_GitHub_API_Deploy();
+            $result = $github_deployer->deploy_build($build_id);
+            
+            if ($result['success']) {
+                // Update status
+                Kaziki_Build_System::update_build_status($build_id, 'deployed');
+                
+                // Expected Cloudflare Pages URL (will be created by GitHub Actions)
+                $preview_url = 'https://build-' . $build_id . '.burky-cz.pages.dev';
+                
+                // Save deployment info
+                update_post_meta($build_id, '_cloudflare_deployment_url', $preview_url);
+                
+                // Success message
+                $message = "Build pushed to GitHub successfully!\n\n";
+                $message .= "Branch: main\n";
+                $message .= "Commit: " . $result['commit_hash'] . "\n";
+                $message .= "Files: " . $result['files_count'] . "\n\n";
+                $message .= "GitHub Actions is deploying to Cloudflare Pages...\n";
+                $message .= "Expected URL: " . $preview_url . "\n\n";
+                $message .= "Deployment usually takes 2-3 minutes.\n";
+                $message .= "Check status: https://github.com/proaxe/kaziki/actions";
+                
+                wp_send_json_success(array(
+                    'message' => $message,
+                    'preview_url' => $preview_url,
+                    'branch' => 'main',
+                    'commit_hash' => $result['commit_hash'],
+                    'github_url' => 'https://github.com/proaxe/kaziki/commits/main',
+                    'actions_url' => 'https://github.com/proaxe/kaziki/actions'
+                ));
             } else {
                 wp_send_json_error($result);
             }

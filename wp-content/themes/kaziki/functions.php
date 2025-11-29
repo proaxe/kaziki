@@ -405,3 +405,6 @@ function my_custom_button_shortcode( $atts ) {
         '</a>';
 }
 add_shortcode( 'button', 'my_custom_button_shortcode' );
+
+// Load GitHub API Deploy class
+require_once get_template_directory() . '/inc/github-api-deploy.php';

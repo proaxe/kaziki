@@ -186,6 +186,58 @@
             });
         });
 
+        // Deploy via GitHub
+        $('#git-push-deploy').on('click', function (e) {
+            e.preventDefault();
+
+            var $btn = $(this);
+            var buildId = $btn.data('build-id');
+
+            if (!confirm('Are you sure you want to deploy this build to GitHub?')) {
+                return;
+            }
+
+            $btn.prop('disabled', true).text('Deploying...');
+            $('#build-progress').show();
+            $('#build-status-text').text('Pushing to GitHub...');
+            updateProgress(20);
+
+            $.ajax({
+                url: kazikiBuild.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'kaziki_git_push_deploy',
+                    build_id: buildId,
+                    nonce: kazikiBuild.nonce
+                },
+                success: function (response) {
+                    if (response.success) {
+                        $('#build-status-text').text('Deployed successfully!');
+                        updateProgress(100);
+
+                        alert(response.data.message);
+
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        $('#build-status-text').text('Error: ' + response.data.message);
+                        updateProgress(0);
+                        $btn.prop('disabled', false).text('Deploy via GitHub');
+
+                        alert('Error: ' + response.data.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $('#build-status-text').text('Error: ' + error);
+                    updateProgress(0);
+                    $btn.prop('disabled', false).text('Deploy via GitHub');
+
+                    alert('Error: ' + error);
+                }
+            });
+        });
+
         // Download Build
         $('#download-build').on('click', function (e) {
             e.preventDefault();

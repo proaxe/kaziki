@@ -131,8 +131,8 @@ class Kaziki_Build_System {
             <hr>
             
             <p>
-                <button type="button" class="button button-primary button-large" id="deploy-cloudflare" data-build-id="<?php echo esc_attr($post->ID); ?>" <?php echo (!$build_path) ? 'disabled' : ''; ?>>
-                    <span class="dashicons dashicons-cloud-upload"></span> Deploy to Cloudflare
+                <button type="button" class="button button-primary button-large" id="git-push-deploy" data-build-id="<?php echo esc_attr($post->ID); ?>" <?php echo (!$build_path) ? 'disabled' : ''; ?>>
+                    <span class="dashicons dashicons-cloud-upload"></span> Deploy via GitHub
                 </button>
             </p>
             
