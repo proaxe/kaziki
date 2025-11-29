@@ -1,0 +1,5 @@
+name = "kaziki"
+compatibility_date = "2025-11-29"
+
+[assets]
+directory = "./wp-content/uploads/builds/version-146"
