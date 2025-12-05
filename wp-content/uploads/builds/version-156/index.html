@@ -34,10 +34,10 @@
     
     <style>
         :root {
-            --x-a361fe: #cbff23;
-            --n-6afd86: #ffffff;
-            --k-b55692: #8224e3;
-            --k-a7bf46: #7cae8d;
+            --y-1fa0e4: #cbff23;
+            --r-524430: #ffffff;
+            --b-3f28cb: #8224e3;
+            --h-f8bf42: #7cae8d;
         }
 
         * {
@@ -46,8 +46,8 @@
 
         body {
             -webkit-font-smoothing: antialiased;
-            background-color: var(--x-a361fe);
-            color: var(--n-6afd86);
+            background-color: var(--y-1fa0e4);
+            color: var(--r-524430);
             font-family: "DM Sans", sans-serif;
             font-size: 16px;
             height: auto;
@@ -65,7 +65,7 @@
         h1, h2, h3, h4, h5, h6 {
             letter-spacing: .03em;
             font-weight: 700;
-            color: var(--n-6afd86);
+            color: var(--r-524430);
         }
 
         h1 {
@@ -90,35 +90,35 @@
         }
 
         a {
-            color: var(--k-b55692);
+            color: var(--b-3f28cb);
         }
 
         a:active, a:focus, a:hover {
             outline: 0;
         }
 
-        .r-0a7f9b {
+        .c-42b71f {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         /* Mobile Header */
-        .s-235b94 {
+        .b-102b45 {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: var(--x-a361fe);
-            border-bottom: 1px solid var(--k-a7bf46);
+            background: var(--y-1fa0e4);
+            border-bottom: 1px solid var(--h-f8bf42);
             padding: 15px 20px;
             z-index: 1000;
             align-items: center;
             justify-content: space-between;
         }
 
-        .r-198561 {
+        .r-f14452 {
             width: 30px;
             height: 25px;
             display: flex;
@@ -128,36 +128,36 @@
             z-index: 1001;
         }
 
-        .r-198561 span {
+        .r-f14452 span {
             width: 100%;
             height: 3px;
-            background: var(--n-6afd86);
+            background: var(--r-524430);
             transition: all 0.3s;
             border-radius: 2px;
         }
 
-        .r-198561.active span:nth-child(1) {
+        .r-f14452.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
 
-        .r-198561.active span:nth-child(2) {
+        .r-f14452.active span:nth-child(2) {
             opacity: 0;
         }
 
-        .r-198561.active span:nth-child(3) {
+        .r-f14452.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
 
-        .z-71d1fe {
+        .m-4a33ed {
             max-height: 40px;
         }
         
-        .z-71d1fe img {
+        .m-4a33ed img {
             max-height: 40px;
         }
         
         /* Mobile Menu Overlay */
-        .a-821ab7.mobile-menu {
+        .s-3c715d.mobile-menu {
             flex-direction: column;
             gap: 0px;
             position: fixed;
@@ -166,7 +166,7 @@
             width: 80%;
             max-width: 300px;
             height: 100vh;
-            background: var(--x-a361fe);
+            background: var(--y-1fa0e4);
             padding: 80px 20px 20px;
             transition: left 0.3s ease;
             z-index: 999;
@@ -174,41 +174,41 @@
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         }
         
-        .a-821ab7.mobile-menu.active {
+        .s-3c715d.mobile-menu.active {
             left: 0;
         }
         
-        .a-821ab7.mobile-menu li {
+        .s-3c715d.mobile-menu li {
             margin-bottom: 15px;
         }
         
-        .a-821ab7.mobile-menu li a {
+        .s-3c715d.mobile-menu li a {
             display: block;
             padding: 10px 0;
             font-size: 18px;
         }
 
         /* Desktop Header */
-        header.e-6b5ffa {
-            background: var(--x-a361fe);
-            border-bottom: 1px solid var(--k-a7bf46);
+        header.y-033c4c {
+            background: var(--y-1fa0e4);
+            border-bottom: 1px solid var(--h-f8bf42);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 999;
         }
 
-        header.e-6b5ffa .r-0a7f9b {
+        header.y-033c4c .c-42b71f {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .s-0ac6ad img {
+        .t-27df70 img {
             max-height: 50px;
         }
 
-        .a-821ab7 {
+        .s-3c715d {
             list-style: none;
             padding: 0;
             display: flex;
@@ -216,18 +216,18 @@
             margin: 0;
         }
 
-        .a-821ab7 li a {
+        .s-3c715d li a {
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        .a-821ab7 li a:hover {
+        .s-3c715d li a:hover {
             text-decoration: underline;
         }
 
         /* Main Content */
-        .f-aea840 {
+        .s-5fd426 {
             padding: 40px 0;
         }
         figure img {
@@ -250,10 +250,10 @@
         table td, table th {
             padding: 10px;
             text-align: left;
-            border: 1px solid var(--k-a7bf46);
+            border: 1px solid var(--h-f8bf42);
         }
         /* Casino Items from User Request */
-        .casinos-list {
+        .d-95ba4f {
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -262,11 +262,11 @@
             margin: 20px 0;
         }
 
-        .casino-item {
+        .k-1e6fc5 {
             display: grid;
             grid-template-columns: 150px .7fr .7fr 100px 140px;
-            align-items: center;
             gap: 20px;
+            align-items: center;
             background: #ffffff;
             color: #333;
             border-radius: 10px;
@@ -274,53 +274,53 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             border: 2px solid transparent;
         }
-        .casino-item ul{
+        .k-1e6fc5 ul{
             margin-bottom: 0!important;
         }
-        .casino-item ul {
-            list-style: none; /* убираем стандартные точки */
+        .k-1e6fc5 ul {
+            list-style: none;
             padding-left: 0;
             margin: 0;
         }
 
-        .casino-item ul li {
+        .k-1e6fc5 ul li {
             position: relative;
-            padding-left: 28px; /* отступ под галочку */
+            padding-left: 28px;
             margin-bottom: 8px;
         }
 
-        .casino-item ul li::before {
-            content: "✔"; /* галочка */
+        .k-1e6fc5 ul li::before {
+            content: "✔";
             position: absolute;
             left: 0;
             top: 0;
-            color: #28a745; /* зелёный цвет галочки */
+            color: #28a745;
             font-weight: bold;
             font-size: 16px;
             line-height: 1.2;
         }
 
-        .casino-item.casino-border {
-            border-color: #FFD54F; /* Желтая рамка */
+        .k-1e6fc5.casino-border {
+            border-color: #FFD54F;
         }
 
-        .casino-logo {
+        .a-d3a88f {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
-        .casino-logo img {
+        .a-d3a88f img {
             max-height: 50px;
             margin-bottom: 5px;
         }
 
-        .casino-name {
+        .y-c6be63 {
             font-size: 14px;
             color: #888;
         }
 
-        .casino-bonus {
+        .f-8104f6 {
             font-size: 20px;
             font-weight: bold;
             color: #000;
@@ -331,7 +331,7 @@
             color: #1C2642;
         }
 
-        .casino-bonus ul {
+        .f-8104f6 ul {
             margin: 5px 0 0;
             padding-left: 18px;
             font-weight: normal;
@@ -339,27 +339,27 @@
             color: #333;
         }
 
-        .casino-bonus li {
+        .f-8104f6 li {
             margin-bottom: 3px;
         }
 
-        .casino-rating {
+        .d-b0efcf {
             text-align: center;
             font-weight: bold;
             font-size: 20px;
         }
 
-        .casino-rating .rating-stars {
+        .d-b0efcf .p-a7d155 {
             display: block;
             font-size: 14px;
             color: #f5c518;
         }
 
-        .casino-btn {
+        .g-a827a6 {
             text-align: right;
         }
 
-        .btn-play {
+        .c-9b977a {
             display: inline-block;
             padding: 10px 20px;
             background: #23938e;
@@ -370,23 +370,23 @@
             transition: 0.3s;
         }
 
-        .btn-play:hover {
+        .c-9b977a:hover {
             transition:.4s;
            transform:scale(1.05);
         }
 
         /* Author Box */
-        .s-62605e {
+        .e-89bb75 {
             background: #dd3333;
             border-radius: 8px;
-            padding: 15px 20px;
+            padding: 10px 15px;
             display: flex;
             align-items: center;
             gap: 15px;
             margin: 20px 0;
         }
 
-        .m-d07e70 {
+        .t-36a90a {
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -394,34 +394,34 @@
             flex-shrink: 0;
         }
 
-        .r-b65610 {
+        .t-dcb30e {
             flex: 1;
         }
 
-        .r-b65610 a {
+        .t-dcb30e a {
             text-decoration: none;
-            color: var(--n-6afd86);
+            color: var(--r-524430);
             font-weight: bold;
         }
 
-        .r-b65610 a:hover {
+        .t-dcb30e a:hover {
             text-decoration: underline;
         }
 
         /* FAQ Section */
-        .e-e63f77 {
+        .q-9a6a0b {
             margin: 40px 0;
         }
 
-        .p-b46ef3 {
-            border: 1px solid var(--k-a7bf46);
+        .c-c7542e {
+            border: 1px solid var(--h-f8bf42);
             border-radius: 8px;
             margin-bottom: 15px;
             overflow: hidden;
             background: #0066bf;
         }
 
-        .c-b4a25c {
+        .s-c2321a {
             padding: 15px 20px;
             margin: 0;
             cursor: pointer;
@@ -431,15 +431,15 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        .p-b46ef3.active .c-b4a25c {
+        .c-c7542e.active .s-c2321a {
             color: #dd9933;
         }
 
-        .c-b4a25c:hover {
+        .s-c2321a:hover {
             background: rgba(0,0,0,0.02);
         }
 
-        .c-b4a25c::after {
+        .s-c2321a::after {
             content: '+';
             position: absolute;
             right: 20px;
@@ -449,12 +449,12 @@
             transition: transform 0.3s;
         }
 
-        .p-b46ef3.active .c-b4a25c::after {
+        .c-c7542e.active .s-c2321a::after {
             content: '−';
             transform: rotate(180deg);
         }
 
-        .w-b01a86 {
+        .b-de0941 {
             max-height: 0;
             padding: 0 20px;
             margin: 0;
@@ -464,7 +464,7 @@
             line-height: 1.6;
         }
 
-        .p-b46ef3.active .w-b01a86 {
+        .c-c7542e.active .b-de0941 {
             max-height: 500px;
             padding: 15px 20px;
             opacity: 1;
@@ -474,7 +474,7 @@
         footer{
                         background: #1e73be;
         }
-        .c-ebe8b9 {
+        .q-771c79 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -484,30 +484,30 @@
             margin: 0;
         }
 
-        .c-ebe8b9 a {
+        .q-771c79 a {
             text-decoration: none;
             text-align: center;
             color: #ffffff !important;
         }
 
-        .c-ebe8b9 a:hover {
+        .q-771c79 a:hover {
             text-decoration: underline;
         }
 
-        .p-2cda70 {
+        .s-a48c90 {
             padding: 20px;
             text-align: center;
             background: #1e73be;
-            border-top: 1px solid var(--k-a7bf46);
+            border-top: 1px solid var(--h-f8bf42);
             color: #ffffff;
         }
         
-        .p-2cda70 p {
+        .s-a48c90 p {
              color: #ffffff !important;
         }
 
         /* Fixed Casino Popups */
-        .h-9e6cd8 {
+        .p-fd095d {
             color: white !important;
             width: 100%;
             position: fixed;
@@ -517,23 +517,23 @@
             z-index: 9999;
         }
 
-        .h-9e6cd8 .head {
+        .p-fd095d .head {
             font-weight: 600;
             font-size: 1.2em !important;
             margin-bottom: 0.3em;
             margin-top: 0;
         }
 
-        .h-9e6cd8 .bottom {
+        .p-fd095d .bottom {
             margin-bottom: 0.3em;
             margin-top: 0;
         }
 
-        .h-9e6cd8 img {
+        .p-fd095d img {
             max-width: 150px;
         }
 
-        .h-9e6cd8 .r-0a7f9b {
+        .p-fd095d .c-42b71f {
             display: flex;
             gap: 20px;
             align-items: center;
@@ -541,7 +541,7 @@
             position: relative;
         }
 
-        .h-9e6cd8 a {
+        .p-fd095d a {
             margin-right: 2vw;
             border-radius: 16px;
             padding: 12px 20px;
@@ -551,23 +551,23 @@
             font-weight: bold;
         }
 
-        .h-9e6cd8 a:hover {
+        .p-fd095d a:hover {
             transform: scale(1.05);
         }
 
-        .f-1485d9 {
+        .c-b30942 {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 40px;
         }
 
-        .f-1485d9 p {
+        .c-b30942 p {
             margin-bottom: 0.3em;
             margin-top: 0;
         }
 
-        .d-af817c {
+        .r-ae2a46 {
             position: absolute;
             top: -8px;
             right: 12px;
@@ -578,26 +578,26 @@
             transition: 0.3s;
         }
 
-        .d-af817c:hover {
+        .r-ae2a46:hover {
             transform: rotate(90deg);
         }
 
         /* Fixed Casino Responsive */
-        .h-9e6cd8.mobile {
+        .p-fd095d.mobile {
             display: none;
         }
 
         @media screen and (max-width: 991px) {
-            .h-9e6cd8.desktop {
+            .p-fd095d.desktop {
                 display: none;
             }
-            .h-9e6cd8.mobile {
+            .p-fd095d.mobile {
                 display: block;
             }
-            .h-9e6cd8.mobile .r-0a7f9b {
+            .p-fd095d.mobile .c-42b71f {
                 flex-direction: column;
             }
-            .h-9e6cd8.mobile a {
+            .p-fd095d.mobile a {
                 width: 100%;
                 text-align: center;
             }
@@ -627,15 +627,15 @@
             
         /* Mobile responsive */
         @media (max-width: 768px) {
-            .s-235b94 {
+            .b-102b45 {
                 display: flex !important;
             }
             
-            header.e-6b5ffa {
+            header.y-033c4c {
                 display: none;
             }
             
-            .f-aea840 {
+            .s-5fd426 {
                 padding-top: 80px;
             }
         }
@@ -755,6 +755,62 @@
                 overflow-x: auto;
                 white-space: nowrap;
             }
+
+            /* Mobile Casino Item Styles */
+            .k-1e6fc5 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 15px;
+                align-items: center;
+                text-align: left;
+            }
+
+            /* Logo */
+            .a-d3a88f {
+                grid-column: 1 / 2;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .a-d3a88f img {
+                max-height: 60px;
+                width: auto;
+            }
+
+            /* Rating */
+            .d-b0efcf {
+                grid-column: 2 / 2;
+                justify-self: end;
+                text-align: right;
+                grid-row: 1;
+            }
+            .d-b0efcf .p-a7d155 {
+                display: flex;
+                gap: 2px;
+                justify-content: flex-end;
+            }
+
+            /* Bonus */
+            .f-8104f6 {
+                grid-column: 1 / -1;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+                margin: 5px 0;
+            }
+
+            /* List */
+            .k-292ebc {
+                grid-column: 1 / -1;
+            }
+
+            /* Button */
+            .g-a827a6 {
+                grid-column: 1 / -1;
+                text-align: center;
+                grid-row: 3;
+            }
             figure{
                 margin: 0;
             }
@@ -763,7 +819,7 @@
     min-height: 180px;
     object-fit: cover;
             }
-             .c-ebe8b9 {
+             .q-771c79 {
             display: grid;
             grid-template-columns:  1fr;
             gap: 20px;
@@ -772,23 +828,24 @@
             list-style: none;
             margin: 0;
         }
-        .c-ebe8b9 ul{
+      
+        }
+          footer ul{
              list-style: none;
         padding: 0;
-        }
         }
     </style>
 </head>
 
 <body>
     <!-- Mobile Header -->
-    <div class="s-235b94">
-        <div class="z-71d1fe">
+    <div class="b-102b45">
+        <div class="m-4a33ed">
                             <a href="#">
                     <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="Logo">
                 </a>
                     </div>
-        <div class="r-198561">
+        <div class="r-f14452">
             <span></span>
             <span></span>
             <span></span>
@@ -796,20 +853,20 @@
     </div>
     
     <!-- Mobile Menu Overlay -->
-    <ul class="a-821ab7 mobile-menu">
+    <ul class="s-3c715d mobile-menu">
                                     <li><a href="https://kaziki.uas/">Menu1</a></li>
                             <li><a href="https://kaziki.uas/">Menu2</a></li>
                         </ul>
 
     <!-- Desktop Header -->
-    <header class="e-6b5ffa">
-        <div class="r-0a7f9b">
-            <div class="s-0ac6ad">
+    <header class="y-033c4c">
+        <div class="c-42b71f">
+            <div class="t-27df70">
                                     <a href="#">
                         <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="Logo">
                     </a>
                             </div>
-            <ul class="a-821ab7">
+            <ul class="s-3c715d">
                                                             <li><a href="https://kaziki.uas/">Menu1</a></li>
                                             <li><a href="https://kaziki.uas/">Menu2</a></li>
                                                 </ul>
@@ -817,30 +874,28 @@
     </header>
 
     <!-- Main Wrapper -->
-    <div class="f-aea840">
-        <div class="r-0a7f9b">
+    <div class="s-5fd426">
+        <div class="c-42b71f">
             <h1>Pache4</h1>
-                        <!-- Author Box -->
-                            <div class="sc-author-box" style="background: #dd3333 !important;">
-                                            <img src="img/cbaede2b9ad9f85dda9e15c2218d98db.webp" alt="VALeRA" class="sc-author-avatar">
-                                        <div class="sc-author-info">
+                            <div class="e-89bb75" style="background: #dd3333 !important;">
+                                            <img src="img/cbaede2b9ad9f85dda9e15c2218d98db.webp" alt="VALeRA" class="t-36a90a">
+                                        <div class="t-dcb30e">
                                                     <strong>Author: VALeRA</strong><br>
                                                 <span>Last updated: 04 December 2025</span>
                     </div>
                 </div>
-                                    <!-- Casino Items List -->
-                            <div class="casinos-list">
-                                                                    <div class="casino-item casino-border" style="border-color: #dd9933;">
-                            <div class="casino-logo">
+                                        <div class="d-95ba4f">
+                                                                    <div class="k-1e6fc5 casino-border" style="border-color: #dd9933;">
+                            <div class="a-d3a88f">
                                                                     <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="limon">
-                                                                                                    <div class="casino-name">limon</div>
+                                                                                                    <div class="y-c6be63">limon</div>
                                                             </div>
                             
-                            <div class="casino-bonus">
+                            <div class="f-8104f6">
                                                                     <strong>100fs + wager</strong>
                                                             </div>
                             
-                            <div class="casino-list">
+                            <div class="k-292ebc">
                                                                     <ul class="[&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc space-y-1.5 pl-7">
 <li class="whitespace-normal break-words">20% Cashback for 7 Days</li>
 <li class="whitespace-normal break-words">No Withdrawal Limits</li>
@@ -848,16 +903,16 @@
 </ul>
                                                             </div>
                             
-                            <div class="casino-rating">
-                                <span class="rating-number">9/10</span><span class="rating-stars"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="#FFD700"/><stop offset="50%" stop-color="#ccc"/></linearGradient></defs><path fill="url(#half)" d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg></span>                            </div>
+                            <div class="d-b0efcf">
+                                <span class="y-a9b631">9/10</span><span class="p-a7d155"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="#FFD700"/><stop offset="50%" stop-color="#ccc"/></linearGradient></defs><path fill="url(#half)" d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg></span>                            </div>
                             
-                            <div class="casino-btn">
-                                                                    <a href="/go/" class="btn-play" target="_blank">PLAY NOW</a>
+                            <div class="g-a827a6">
+                                                                    <a href="/go/" class="c-9b977a" target="_blank">PLAY NOW</a>
                                                             </div>
                         </div>
                                     </div>
             
-                            <div class="m-aeed29">
+                            <div class="e-17cb3a">
                     <p><!-- wp:paragraph --></p>
 <p>[author_box]<br />
 [casinos]</p>
@@ -2668,13 +2723,20 @@
 
 
             <!-- FAQ Section -->
+                            <div class="q-9a6a0b">
+                                            <div class="c-c7542e">
+                            <h3 class="s-c2321a">faq1</h3>
+                            <div class="b-de0941">
+                                faq2                            </div>
+                        </div>
+                                    </div>
                     </div>
     </div>
 
     <!-- Footer -->
-    <footer class="e-bccc8b">
-        <div class="r-0a7f9b">
-            <div class="c-ebe8b9">
+    <footer class="g-cf4824">
+        <div class="c-42b71f">
+            <div class="q-771c79">
                 <div class="footer-col">
                                             <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="Logo" style="max-width: 150px; margin-bottom: 15px;">
                                         <p>footer text</p>
@@ -2691,18 +2753,18 @@
                                     </div>
             </div>
         </div>
-        <div class="p-2cda70">
+        <div class="s-a48c90">
             <p>&copy; 2025 Pache4. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Fixed Casino Desktop -->
-            <div class="h-9e6cd8 desktop" style="background: #dd3333;">
-            <div class="r-0a7f9b">
-                <span class="d-af817c">&times;</span>
-                <div class="f-1485d9">
+            <div class="p-fd095d desktop" style="background: #dd3333;">
+            <div class="c-42b71f">
+                <span class="r-ae2a46">&times;</span>
+                <div class="c-b30942">
                                             <img src="img/575f0cdd5ddd8d1d8ce14f9584f2d36c.svg" alt="Casino">
-                                        <div class="k-191f90">
+                                        <div class="e-f6b899">
                         <p class="head">Title popup desk</p>
                         <p class="bottom">subtitle pop</p>
                     </div>
@@ -2717,17 +2779,17 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // FAQ Toggle
-            const faqItems = document.querySelectorAll('.p-b46ef3');
+            const faqItems = document.querySelectorAll('.c-c7542e');
             faqItems.forEach(item => {
-                const question = item.querySelector('.c-b4a25c');
+                const question = item.querySelector('.s-c2321a');
                 question.addEventListener('click', function() {
                     item.classList.toggle('active');
                 });
             });
 
             // Mobile Menu Toggle
-            const hamburger = document.querySelector('.r-198561');
-            const mobileMenu = document.querySelector('.a-821ab7.mobile-menu');
+            const hamburger = document.querySelector('.r-f14452');
+            const mobileMenu = document.querySelector('.s-3c715d.mobile-menu');
             
             if (hamburger && mobileMenu) {
                 hamburger.addEventListener('click', function() {
@@ -2746,10 +2808,10 @@
             }
 
             // Fixed Casino Close Buttons
-            const closeButtons = document.querySelectorAll('.d-af817c');
+            const closeButtons = document.querySelectorAll('.r-ae2a46');
             closeButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    this.closest('.h-9e6cd8').style.display = 'none';
+                    this.closest('.p-fd095d').style.display = 'none';
                 });
             });
         });
