@@ -102,7 +102,7 @@ class Kaziki_GitHub_API_Deploy {
      */
     private function get_build_files($build_dir, $build_id) {
         $files = array();
-        $base_path = 'wp-content/uploads/builds/version-' . $build_id;
+        $base_path = 'dist'; // Deploy to dist/ directory for Cloudflare Pages
         
         $iterator = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($build_dir, RecursiveDirectoryIterator::SKIP_DOTS),
