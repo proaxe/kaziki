@@ -186,8 +186,8 @@ class Kaziki_Ajax_Handlers {
                 // Update status
                 Kaziki_Build_System::update_build_status($build_id, 'deployed');
                 
-                // Production Cloudflare Pages URL
-                $production_url = 'https://kaziki.pages.dev';
+                // Production Cloudflare Pages URL (custom domain)
+                $production_url = 'https://burky.cz';
                 
                 // Save deployment info
                 update_post_meta($build_id, '_cloudflare_deployment_url', $production_url);
