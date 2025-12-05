@@ -26,6 +26,8 @@ if (function_exists('acf_add_local_field_group')) {
                 'choices' => array(
                     'template1' => 'Template 1 (Default)',
                     'template2' => 'Template 2',
+                    'template3' => 'Template 3',
+                    'template4' => 'Template 4',
                 ),
                 'default_value' => 'template1',
                 'allow_null' => 0,
@@ -54,6 +56,16 @@ if (function_exists('acf_add_local_field_group')) {
                 'default_value' => 'pages_dev',
                 'allow_null' => 0,
                 'multiple' => 0,
+            ),
+            array(
+                'key' => 'field_build_html_lang',
+                'label' => 'HTML Language Code',
+                'name' => 'html_lang',
+                'type' => 'text',
+                'instructions' => 'Enter language code for HTML lang attribute (e.g., en, ru, uk). Leave empty to omit lang attribute.',
+                'required' => 0,
+                'placeholder' => 'en',
+                'maxlength' => 10,
             ),
         ),
         'location' => array(

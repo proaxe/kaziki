@@ -183,6 +183,8 @@ require get_template_directory() . '/inc/build-system.php';
 require get_template_directory() . '/inc/acf-build-fields.php';
 require get_template_directory() . '/inc/acf-template1-settings.php';
 require get_template_directory() . '/inc/acf-template2-settings.php';
+require get_template_directory() . '/inc/acf-template3-settings.php';
+require get_template_directory() . '/inc/acf-template4-settings.php';
 require get_template_directory() . '/inc/acf/fields_main_settings.php';
 require get_template_directory() . '/inc/html-renderer.php';
 require get_template_directory() . '/inc/cloudflare-deploy.php';
@@ -212,6 +214,28 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'    => 'Template 2 Settings',
         'menu_title'    => 'Template 2',
         'menu_slug'     => 'template2-settings',
+        'capability'    => 'edit_posts',
+        'parent_slug'   => 'themes.php',
+        'icon_url'      => 'dashicons-admin-appearance',
+        'redirect'      => false
+    ));
+    
+    // Template 3 Settings
+    acf_add_options_page(array(
+        'page_title'    => 'Template 3 Settings',
+        'menu_title'    => 'Template 3',
+        'menu_slug'     => 'template3-settings',
+        'capability'    => 'edit_posts',
+        'parent_slug'   => 'themes.php',
+        'icon_url'      => 'dashicons-admin-appearance',
+        'redirect'      => false
+    ));
+    
+    // Template 4 Settings
+    acf_add_options_page(array(
+        'page_title'    => 'Template 4 Settings',
+        'menu_title'    => 'Template 4',
+        'menu_slug'     => 'template4-settings',
         'capability'    => 'edit_posts',
         'parent_slug'   => 'themes.php',
         'icon_url'      => 'dashicons-admin-appearance',

@@ -237,7 +237,7 @@ class Kaziki_Build_System {
                 <h4 style="margin-top: 0;">Save Current Configuration</h4>
                 <p>
                     <label for="snapshot-name"><strong>Snapshot Name:</strong></label><br>
-                    <input type="text" id="snapshot-name" class="widefat" placeholder="e.g., Blue Theme Config" required>
+                    <input type="text" id="snapshot-name" class="widefat" placeholder="e.g., Blue Theme Config">
                 </p>
                 <p>
                     <label for="snapshot-description"><strong>Description (Optional):</strong></label><br>

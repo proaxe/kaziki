@@ -34,7 +34,7 @@ foreach ($elements as $element) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html<?php if (!empty($html_lang)): ?> lang="<?php echo esc_attr($html_lang); ?>"<?php endif; ?>>
 
 <head>
     <meta charset="UTF-8">
@@ -777,6 +777,10 @@ foreach ($elements as $element) {
             }
         });
     </script>
+    
+    <?php if (!empty($header_main)): ?>
+        <?php echo $header_main; ?>
+    <?php endif; ?>
 </head>
 
 <body>
