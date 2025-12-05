@@ -186,29 +186,27 @@ class Kaziki_Ajax_Handlers {
                 // Update status
                 Kaziki_Build_System::update_build_status($build_id, 'deployed');
                 
-                // Expected Cloudflare Pages URL (will be created by GitHub Actions)
-                $preview_url = 'https://build-' . $build_id . '.burky-cz.pages.dev';
+                // Production Cloudflare Pages URL
+                $production_url = 'https://kaziki.pages.dev';
                 
                 // Save deployment info
-                update_post_meta($build_id, '_cloudflare_deployment_url', $preview_url);
+                update_post_meta($build_id, '_cloudflare_deployment_url', $production_url);
                 
                 // Success message
                 $message = "Build pushed to GitHub successfully!\n\n";
                 $message .= "Branch: main\n";
                 $message .= "Commit: " . $result['commit_hash'] . "\n";
                 $message .= "Files: " . $result['files_count'] . "\n\n";
-                $message .= "GitHub Actions is deploying to Cloudflare Pages...\n";
-                $message .= "Expected URL: " . $preview_url . "\n\n";
-                $message .= "Deployment usually takes 2-3 minutes.\n";
-                $message .= "Check status: https://github.com/proaxe/kaziki/actions";
+                $message .= "Cloudflare Pages is deploying to Production...\n";
+                $message .= "Production URL: " . $production_url . "\n\n";
+                $message .= "Deployment usually takes 1-2 minutes.\n";
+                $message .= "Check status: https://dash.cloudflare.com";
                 
                 wp_send_json_success(array(
                     'message' => $message,
-                    'preview_url' => $preview_url,
+                    'preview_url' => $production_url,
                     'branch' => 'main',
-                    'commit_hash' => $result['commit_hash'],
-                    'github_url' => 'https://github.com/proaxe/kaziki/commits/main',
-                    'actions_url' => 'https://github.com/proaxe/kaziki/actions'
+                    'commit_hash' => $result['commit_hash']
                 ));
             } else {
                 wp_send_json_error($result);
