@@ -34,10 +34,10 @@
     
     <style>
         :root {
-            --y-1fa0e4: #cbff23;
-            --r-524430: #ffffff;
-            --b-3f28cb: #8224e3;
-            --h-f8bf42: #7cae8d;
+            --b-0f3a66: #cbff23;
+            --w-3eacbe: #ffffff;
+            --a-0b434b: #8224e3;
+            --d-4d54d9: #7cae8d;
         }
 
         * {
@@ -46,8 +46,8 @@
 
         body {
             -webkit-font-smoothing: antialiased;
-            background-color: var(--y-1fa0e4);
-            color: var(--r-524430);
+            background-color: var(--b-0f3a66);
+            color: var(--w-3eacbe);
             font-family: "DM Sans", sans-serif;
             font-size: 16px;
             height: auto;
@@ -65,7 +65,7 @@
         h1, h2, h3, h4, h5, h6 {
             letter-spacing: .03em;
             font-weight: 700;
-            color: var(--r-524430);
+            color: var(--w-3eacbe);
         }
 
         h1 {
@@ -90,35 +90,35 @@
         }
 
         a {
-            color: var(--b-3f28cb);
+            color: var(--a-0b434b);
         }
 
         a:active, a:focus, a:hover {
             outline: 0;
         }
 
-        .c-42b71f {
+        .r-880b91 {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         /* Mobile Header */
-        .b-102b45 {
+        .f-55d1d6 {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: var(--y-1fa0e4);
-            border-bottom: 1px solid var(--h-f8bf42);
+            background: var(--b-0f3a66);
+            border-bottom: 1px solid var(--d-4d54d9);
             padding: 15px 20px;
             z-index: 1000;
             align-items: center;
             justify-content: space-between;
         }
 
-        .r-f14452 {
+        .t-91c19f {
             width: 30px;
             height: 25px;
             display: flex;
@@ -128,36 +128,36 @@
             z-index: 1001;
         }
 
-        .r-f14452 span {
+        .t-91c19f span {
             width: 100%;
             height: 3px;
-            background: var(--r-524430);
+            background: var(--w-3eacbe);
             transition: all 0.3s;
             border-radius: 2px;
         }
 
-        .r-f14452.active span:nth-child(1) {
+        .t-91c19f.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
 
-        .r-f14452.active span:nth-child(2) {
+        .t-91c19f.active span:nth-child(2) {
             opacity: 0;
         }
 
-        .r-f14452.active span:nth-child(3) {
+        .t-91c19f.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
 
-        .m-4a33ed {
+        .n-8095fb {
             max-height: 40px;
         }
         
-        .m-4a33ed img {
+        .n-8095fb img {
             max-height: 40px;
         }
         
         /* Mobile Menu Overlay */
-        .s-3c715d.mobile-menu {
+        .n-29a832.mobile-menu {
             flex-direction: column;
             gap: 0px;
             position: fixed;
@@ -166,7 +166,7 @@
             width: 80%;
             max-width: 300px;
             height: 100vh;
-            background: var(--y-1fa0e4);
+            background: var(--b-0f3a66);
             padding: 80px 20px 20px;
             transition: left 0.3s ease;
             z-index: 999;
@@ -174,41 +174,41 @@
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         }
         
-        .s-3c715d.mobile-menu.active {
+        .n-29a832.mobile-menu.active {
             left: 0;
         }
         
-        .s-3c715d.mobile-menu li {
+        .n-29a832.mobile-menu li {
             margin-bottom: 15px;
         }
         
-        .s-3c715d.mobile-menu li a {
+        .n-29a832.mobile-menu li a {
             display: block;
             padding: 10px 0;
             font-size: 18px;
         }
 
         /* Desktop Header */
-        header.y-033c4c {
-            background: var(--y-1fa0e4);
-            border-bottom: 1px solid var(--h-f8bf42);
+        header.v-ae4c00 {
+            background: var(--b-0f3a66);
+            border-bottom: 1px solid var(--d-4d54d9);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 999;
         }
 
-        header.y-033c4c .c-42b71f {
+        header.v-ae4c00 .r-880b91 {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .t-27df70 img {
+        .k-2b927d img {
             max-height: 50px;
         }
 
-        .s-3c715d {
+        .n-29a832 {
             list-style: none;
             padding: 0;
             display: flex;
@@ -216,18 +216,18 @@
             margin: 0;
         }
 
-        .s-3c715d li a {
+        .n-29a832 li a {
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        .s-3c715d li a:hover {
+        .n-29a832 li a:hover {
             text-decoration: underline;
         }
 
         /* Main Content */
-        .s-5fd426 {
+        .x-407c4e {
             padding: 40px 0;
         }
         figure img {
@@ -250,19 +250,18 @@
         table td, table th {
             padding: 10px;
             text-align: left;
-            border: 1px solid var(--h-f8bf42);
+            border: 1px solid var(--d-4d54d9);
         }
         /* Casino Items from User Request */
-        .d-95ba4f {
+        .r-b30e78 {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            max-width: 1100px;
             margin: 0 auto;
             margin: 20px 0;
         }
 
-        .k-1e6fc5 {
+        .n-ef6e77 {
             display: grid;
             grid-template-columns: 150px .7fr .7fr 100px 140px;
             gap: 20px;
@@ -274,22 +273,22 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             border: 2px solid transparent;
         }
-        .k-1e6fc5 ul{
+        .n-ef6e77 ul{
             margin-bottom: 0!important;
         }
-        .k-1e6fc5 ul {
+        .n-ef6e77 ul {
             list-style: none;
             padding-left: 0;
             margin: 0;
         }
 
-        .k-1e6fc5 ul li {
+        .n-ef6e77 ul li {
             position: relative;
             padding-left: 28px;
             margin-bottom: 8px;
         }
 
-        .k-1e6fc5 ul li::before {
+        .n-ef6e77 ul li::before {
             content: "✔";
             position: absolute;
             left: 0;
@@ -300,27 +299,27 @@
             line-height: 1.2;
         }
 
-        .k-1e6fc5.casino-border {
+        .n-ef6e77.casino-border {
             border-color: #FFD54F;
         }
 
-        .a-d3a88f {
+        .v-03bdc4 {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
-        .a-d3a88f img {
+        .v-03bdc4 img {
             max-height: 50px;
             margin-bottom: 5px;
         }
 
-        .y-c6be63 {
+        .g-a21c0a {
             font-size: 14px;
             color: #888;
         }
 
-        .f-8104f6 {
+        .b-b896a2 {
             font-size: 20px;
             font-weight: bold;
             color: #000;
@@ -331,7 +330,7 @@
             color: #1C2642;
         }
 
-        .f-8104f6 ul {
+        .b-b896a2 ul {
             margin: 5px 0 0;
             padding-left: 18px;
             font-weight: normal;
@@ -339,27 +338,27 @@
             color: #333;
         }
 
-        .f-8104f6 li {
+        .b-b896a2 li {
             margin-bottom: 3px;
         }
 
-        .d-b0efcf {
+        .s-4b593f {
             text-align: center;
             font-weight: bold;
             font-size: 20px;
         }
 
-        .d-b0efcf .p-a7d155 {
+        .s-4b593f .r-e386d4 {
             display: block;
             font-size: 14px;
             color: #f5c518;
         }
 
-        .g-a827a6 {
+        .n-03e38c {
             text-align: right;
         }
 
-        .c-9b977a {
+        .m-0626a6 {
             display: inline-block;
             padding: 10px 20px;
             background: #23938e;
@@ -370,13 +369,13 @@
             transition: 0.3s;
         }
 
-        .c-9b977a:hover {
+        .m-0626a6:hover {
             transition:.4s;
            transform:scale(1.05);
         }
 
         /* Author Box */
-        .e-89bb75 {
+        .b-df8f3e {
             background: #dd3333;
             border-radius: 8px;
             padding: 10px 15px;
@@ -386,7 +385,7 @@
             margin: 20px 0;
         }
 
-        .t-36a90a {
+        .a-e79d1b {
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -394,34 +393,34 @@
             flex-shrink: 0;
         }
 
-        .t-dcb30e {
+        .n-3690c9 {
             flex: 1;
         }
 
-        .t-dcb30e a {
+        .n-3690c9 a {
             text-decoration: none;
-            color: var(--r-524430);
+            color: var(--w-3eacbe);
             font-weight: bold;
         }
 
-        .t-dcb30e a:hover {
+        .n-3690c9 a:hover {
             text-decoration: underline;
         }
 
         /* FAQ Section */
-        .q-9a6a0b {
+        .h-e9566e {
             margin: 40px 0;
         }
 
-        .c-c7542e {
-            border: 1px solid var(--h-f8bf42);
+        .d-05af4c {
+            border: 1px solid var(--d-4d54d9);
             border-radius: 8px;
             margin-bottom: 15px;
             overflow: hidden;
             background: #0066bf;
         }
 
-        .s-c2321a {
+        .n-d61d51 {
             padding: 15px 20px;
             margin: 0;
             cursor: pointer;
@@ -431,15 +430,15 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        .c-c7542e.active .s-c2321a {
+        .d-05af4c.active .n-d61d51 {
             color: #dd9933;
         }
 
-        .s-c2321a:hover {
+        .n-d61d51:hover {
             background: rgba(0,0,0,0.02);
         }
 
-        .s-c2321a::after {
+        .n-d61d51::after {
             content: '+';
             position: absolute;
             right: 20px;
@@ -449,12 +448,12 @@
             transition: transform 0.3s;
         }
 
-        .c-c7542e.active .s-c2321a::after {
+        .d-05af4c.active .n-d61d51::after {
             content: '−';
             transform: rotate(180deg);
         }
 
-        .b-de0941 {
+        .d-243c17 {
             max-height: 0;
             padding: 0 20px;
             margin: 0;
@@ -464,7 +463,7 @@
             line-height: 1.6;
         }
 
-        .c-c7542e.active .b-de0941 {
+        .d-05af4c.active .d-243c17 {
             max-height: 500px;
             padding: 15px 20px;
             opacity: 1;
@@ -474,7 +473,7 @@
         footer{
                         background: #1e73be;
         }
-        .q-771c79 {
+        .f-a5d506 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -484,30 +483,30 @@
             margin: 0;
         }
 
-        .q-771c79 a {
+        .f-a5d506 a {
             text-decoration: none;
             text-align: center;
             color: #ffffff !important;
         }
 
-        .q-771c79 a:hover {
+        .f-a5d506 a:hover {
             text-decoration: underline;
         }
 
-        .s-a48c90 {
+        .c-7987c0 {
             padding: 20px;
             text-align: center;
             background: #1e73be;
-            border-top: 1px solid var(--h-f8bf42);
+            border-top: 1px solid var(--d-4d54d9);
             color: #ffffff;
         }
         
-        .s-a48c90 p {
+        .c-7987c0 p {
              color: #ffffff !important;
         }
 
         /* Fixed Casino Popups */
-        .p-fd095d {
+        .k-8a173e {
             color: white !important;
             width: 100%;
             position: fixed;
@@ -517,23 +516,23 @@
             z-index: 9999;
         }
 
-        .p-fd095d .head {
+        .k-8a173e .head {
             font-weight: 600;
             font-size: 1.2em !important;
             margin-bottom: 0.3em;
             margin-top: 0;
         }
 
-        .p-fd095d .bottom {
+        .k-8a173e .bottom {
             margin-bottom: 0.3em;
             margin-top: 0;
         }
 
-        .p-fd095d img {
+        .k-8a173e img {
             max-width: 150px;
         }
 
-        .p-fd095d .c-42b71f {
+        .k-8a173e .r-880b91 {
             display: flex;
             gap: 20px;
             align-items: center;
@@ -541,7 +540,7 @@
             position: relative;
         }
 
-        .p-fd095d a {
+        .k-8a173e a {
             margin-right: 2vw;
             border-radius: 16px;
             padding: 12px 20px;
@@ -551,23 +550,23 @@
             font-weight: bold;
         }
 
-        .p-fd095d a:hover {
+        .k-8a173e a:hover {
             transform: scale(1.05);
         }
 
-        .c-b30942 {
+        .z-86acbf {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 40px;
         }
 
-        .c-b30942 p {
+        .z-86acbf p {
             margin-bottom: 0.3em;
             margin-top: 0;
         }
 
-        .r-ae2a46 {
+        .h-72baf3 {
             position: absolute;
             top: -8px;
             right: 12px;
@@ -578,26 +577,26 @@
             transition: 0.3s;
         }
 
-        .r-ae2a46:hover {
+        .h-72baf3:hover {
             transform: rotate(90deg);
         }
 
         /* Fixed Casino Responsive */
-        .p-fd095d.mobile {
+        .k-8a173e.mobile {
             display: none;
         }
 
         @media screen and (max-width: 991px) {
-            .p-fd095d.desktop {
+            .k-8a173e.desktop {
                 display: none;
             }
-            .p-fd095d.mobile {
+            .k-8a173e.mobile {
                 display: block;
             }
-            .p-fd095d.mobile .c-42b71f {
+            .k-8a173e.mobile .r-880b91 {
                 flex-direction: column;
             }
-            .p-fd095d.mobile a {
+            .k-8a173e.mobile a {
                 width: 100%;
                 text-align: center;
             }
@@ -627,15 +626,15 @@
             
         /* Mobile responsive */
         @media (max-width: 768px) {
-            .b-102b45 {
+            .f-55d1d6 {
                 display: flex !important;
             }
             
-            header.y-033c4c {
+            header.v-ae4c00 {
                 display: none;
             }
             
-            .s-5fd426 {
+            .x-407c4e {
                 padding-top: 80px;
             }
         }
@@ -757,7 +756,7 @@
             }
 
             /* Mobile Casino Item Styles */
-            .k-1e6fc5 {
+            .n-ef6e77 {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 10px 15px;
@@ -766,33 +765,33 @@
             }
 
             /* Logo */
-            .a-d3a88f {
+            .v-03bdc4 {
                 grid-column: 1 / 2;
                 display: flex;
                 align-items: center;
                 gap: 8px;
             }
 
-            .a-d3a88f img {
+            .v-03bdc4 img {
                 max-height: 60px;
                 width: auto;
             }
 
             /* Rating */
-            .d-b0efcf {
+            .s-4b593f {
                 grid-column: 2 / 2;
                 justify-self: end;
                 text-align: right;
                 grid-row: 1;
             }
-            .d-b0efcf .p-a7d155 {
+            .s-4b593f .r-e386d4 {
                 display: flex;
                 gap: 2px;
                 justify-content: flex-end;
             }
 
             /* Bonus */
-            .f-8104f6 {
+            .b-b896a2 {
                 grid-column: 1 / -1;
                 font-size: 16px;
                 font-weight: bold;
@@ -801,12 +800,12 @@
             }
 
             /* List */
-            .k-292ebc {
+            .z-5e4dfc {
                 grid-column: 1 / -1;
             }
 
             /* Button */
-            .g-a827a6 {
+            .n-03e38c {
                 grid-column: 1 / -1;
                 text-align: center;
                 grid-row: 3;
@@ -819,7 +818,7 @@
     min-height: 180px;
     object-fit: cover;
             }
-             .q-771c79 {
+             .f-a5d506 {
             display: grid;
             grid-template-columns:  1fr;
             gap: 20px;
@@ -839,13 +838,13 @@
 
 <body>
     <!-- Mobile Header -->
-    <div class="b-102b45">
-        <div class="m-4a33ed">
+    <div class="f-55d1d6">
+        <div class="n-8095fb">
                             <a href="#">
                     <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="Logo">
                 </a>
                     </div>
-        <div class="r-f14452">
+        <div class="t-91c19f">
             <span></span>
             <span></span>
             <span></span>
@@ -853,20 +852,20 @@
     </div>
     
     <!-- Mobile Menu Overlay -->
-    <ul class="s-3c715d mobile-menu">
+    <ul class="n-29a832 mobile-menu">
                                     <li><a href="https://kaziki.uas/">Menu1</a></li>
                             <li><a href="https://kaziki.uas/">Menu2</a></li>
                         </ul>
 
     <!-- Desktop Header -->
-    <header class="y-033c4c">
-        <div class="c-42b71f">
-            <div class="t-27df70">
+    <header class="v-ae4c00">
+        <div class="r-880b91">
+            <div class="k-2b927d">
                                     <a href="#">
                         <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="Logo">
                     </a>
                             </div>
-            <ul class="s-3c715d">
+            <ul class="n-29a832">
                                                             <li><a href="https://kaziki.uas/">Menu1</a></li>
                                             <li><a href="https://kaziki.uas/">Menu2</a></li>
                                                 </ul>
@@ -874,28 +873,28 @@
     </header>
 
     <!-- Main Wrapper -->
-    <div class="s-5fd426">
-        <div class="c-42b71f">
+    <div class="x-407c4e">
+        <div class="r-880b91">
             <h1>Pache4</h1>
-                            <div class="e-89bb75" style="background: #dd3333 !important;">
-                                            <img src="img/cbaede2b9ad9f85dda9e15c2218d98db.webp" alt="VALeRA" class="t-36a90a">
-                                        <div class="t-dcb30e">
+                            <div class="b-df8f3e" style="background: #dd3333 !important;">
+                                            <img src="img/cbaede2b9ad9f85dda9e15c2218d98db.webp" alt="VALeRA" class="a-e79d1b">
+                                        <div class="n-3690c9">
                                                     <strong>Author: VALeRA</strong><br>
-                                                <span>Last updated: 04 December 2025</span>
+                                                <span>Last updated: 05 December 2025</span>
                     </div>
                 </div>
-                                        <div class="d-95ba4f">
-                                                                    <div class="k-1e6fc5 casino-border" style="border-color: #dd9933;">
-                            <div class="a-d3a88f">
+                                        <div class="r-b30e78">
+                                                                    <div class="n-ef6e77 casino-border" style="border-color: #dd9933;">
+                            <div class="v-03bdc4">
                                                                     <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="limon">
-                                                                                                    <div class="y-c6be63">limon</div>
+                                                                                                    <div class="g-a21c0a">limon</div>
                                                             </div>
                             
-                            <div class="f-8104f6">
+                            <div class="b-b896a2">
                                                                     <strong>100fs + wager</strong>
                                                             </div>
                             
-                            <div class="k-292ebc">
+                            <div class="z-5e4dfc">
                                                                     <ul class="[&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc space-y-1.5 pl-7">
 <li class="whitespace-normal break-words">20% Cashback for 7 Days</li>
 <li class="whitespace-normal break-words">No Withdrawal Limits</li>
@@ -903,16 +902,16 @@
 </ul>
                                                             </div>
                             
-                            <div class="d-b0efcf">
-                                <span class="y-a9b631">9/10</span><span class="p-a7d155"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="#FFD700"/><stop offset="50%" stop-color="#ccc"/></linearGradient></defs><path fill="url(#half)" d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg></span>                            </div>
+                            <div class="s-4b593f">
+                                <span class="b-0fa6f3">9/10</span><span class="r-e386d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg><svg width="20" height="20" viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="#FFD700"/><stop offset="50%" stop-color="#ccc"/></linearGradient></defs><path fill="url(#half)" d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.6 0 9.753l8.332-1.735z"/></svg></span>                            </div>
                             
-                            <div class="g-a827a6">
-                                                                    <a href="/go/" class="c-9b977a" target="_blank">PLAY NOW</a>
+                            <div class="n-03e38c">
+                                                                    <a href="/go/" class="m-0626a6" target="_blank">PLAY NOW</a>
                                                             </div>
                         </div>
                                     </div>
             
-                            <div class="e-17cb3a">
+                            <div class="z-17c6ee">
                     <p><!-- wp:paragraph --></p>
 <p>[author_box]<br />
 [casinos]</p>
@@ -2723,10 +2722,10 @@
 
 
             <!-- FAQ Section -->
-                            <div class="q-9a6a0b">
-                                            <div class="c-c7542e">
-                            <h3 class="s-c2321a">faq1</h3>
-                            <div class="b-de0941">
+                            <div class="h-e9566e">
+                                            <div class="d-05af4c">
+                            <h3 class="n-d61d51">faq1</h3>
+                            <div class="d-243c17">
                                 faq2                            </div>
                         </div>
                                     </div>
@@ -2734,9 +2733,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="g-cf4824">
-        <div class="c-42b71f">
-            <div class="q-771c79">
+    <footer class="a-db8648">
+        <div class="r-880b91">
+            <div class="f-a5d506">
                 <div class="footer-col">
                                             <img src="img/014e8b8bcb905c2a00ee83e07a9bcbee.svg" alt="Logo" style="max-width: 150px; margin-bottom: 15px;">
                                         <p>footer text</p>
@@ -2753,18 +2752,18 @@
                                     </div>
             </div>
         </div>
-        <div class="s-a48c90">
+        <div class="c-7987c0">
             <p>&copy; 2025 Pache4. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Fixed Casino Desktop -->
-            <div class="p-fd095d desktop" style="background: #dd3333;">
-            <div class="c-42b71f">
-                <span class="r-ae2a46">&times;</span>
-                <div class="c-b30942">
+            <div class="k-8a173e desktop" style="background: #dd3333;">
+            <div class="r-880b91">
+                <span class="h-72baf3">&times;</span>
+                <div class="z-86acbf">
                                             <img src="img/575f0cdd5ddd8d1d8ce14f9584f2d36c.svg" alt="Casino">
-                                        <div class="e-f6b899">
+                                        <div class="y-ece4bc">
                         <p class="head">Title popup desk</p>
                         <p class="bottom">subtitle pop</p>
                     </div>
@@ -2779,17 +2778,17 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // FAQ Toggle
-            const faqItems = document.querySelectorAll('.c-c7542e');
+            const faqItems = document.querySelectorAll('.d-05af4c');
             faqItems.forEach(item => {
-                const question = item.querySelector('.s-c2321a');
+                const question = item.querySelector('.n-d61d51');
                 question.addEventListener('click', function() {
                     item.classList.toggle('active');
                 });
             });
 
             // Mobile Menu Toggle
-            const hamburger = document.querySelector('.r-f14452');
-            const mobileMenu = document.querySelector('.s-3c715d.mobile-menu');
+            const hamburger = document.querySelector('.t-91c19f');
+            const mobileMenu = document.querySelector('.n-29a832.mobile-menu');
             
             if (hamburger && mobileMenu) {
                 hamburger.addEventListener('click', function() {
@@ -2808,10 +2807,10 @@
             }
 
             // Fixed Casino Close Buttons
-            const closeButtons = document.querySelectorAll('.r-ae2a46');
+            const closeButtons = document.querySelectorAll('.h-72baf3');
             closeButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    this.closest('.p-fd095d').style.display = 'none';
+                    this.closest('.k-8a173e').style.display = 'none';
                 });
             });
         });
